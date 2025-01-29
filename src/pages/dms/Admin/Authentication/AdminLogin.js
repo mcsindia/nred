@@ -9,7 +9,7 @@ const generateCaptcha = () => {
 };
 
 export const AdminLogin = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [captcha, setCaptcha] = useState(generateCaptcha());
    const [captchaInput, setCaptchaInput] = useState('');
@@ -55,12 +55,12 @@ export const AdminLogin = () => {
          <div className="admin-login-form">
            <Form>
              <Form.Group className="mb-3">
-               <Form.Label>Username</Form.Label>
+               <Form.Label>Email</Form.Label>
                <Form.Control
                  type="text"
                  placeholder="Enter your username"
-                 value={username}
-                 onChange={(e) => setUsername(e.target.value)}
+                 value={email}
+                 onChange={(e) => setEmail(e.target.value)}
                  className="rounded-pill"
                />
              </Form.Group>

@@ -10,10 +10,12 @@ export const UserAdd = () => {
   const [formData, setFormData] = useState({
     id: '',
     username: '',
+    designation: '',
     email: '',
+    mobile: '',
     role_id: '',
     password: '',
-    is_active: true,
+    status: 'active',
   });
 
   const [error, setError] = useState('');
@@ -43,8 +45,8 @@ export const UserAdd = () => {
     e.preventDefault();
 
     // Form Validation
-    if (!formData.username || !formData.email || !formData.user_type) {
-      setError('Username, Email, and User Type are required fields.');
+    if (!formData.username || !formData.email || !formData.mobile || !formData.role_id) {
+      setError('Name, Email, Mobile, and User Role are required fields.');
       return;
     }
 
@@ -67,22 +69,48 @@ export const UserAdd = () => {
           {error && <Alert variant="danger" onClose={() => setError('')} dismissible>{error}</Alert>}
 
           <Form onSubmit={handleSubmit}>
-            {/* Username */}
-            <Form.Group className="dms-form-group" >
+            {/* Name */}
+            <Form.Group className="dms-form-group">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
                 name="username"
-                placeholder="Enter username"
+                placeholder="Enter name"
                 value={formData.username}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
 
+            {/* Section */}
+            <Form.Group className="dms-form-group">
+              <Form.Label>Section</Form.Label>
+              <Form.Select
+                name="role_id"
+                value={formData.role_id}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Section</option>
+                <option value="Employee">Bio Mass</option>
+                <option value="Vendor">Solar</option>
+              </Form.Select>
+            </Form.Group>
+
+            {/* Designation */}
+            <Form.Group className="dms-form-group">
+              <Form.Label>Designation</Form.Label>
+              <Form.Control
+                type="text"
+                name="designation"
+                placeholder="Enter designation"
+                value={formData.designation}
+                onChange={handleChange}
+              />
+            </Form.Group>
 
             {/* Email */}
-            <Form.Group className="dms-form-group" >
+            <Form.Group className="dms-form-group">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -94,19 +122,35 @@ export const UserAdd = () => {
               />
             </Form.Group>
 
-            {/* Role id */}
-            <Form.Group className="dms-form-group" >
-              <Form.Label>Role Id</Form.Label>
+            {/* Mobile */}
+            <Form.Group className="dms-form-group">
+              <Form.Label>Mobile</Form.Label>
               <Form.Control
-                type="number"
-                name="Role id"
-                placeholder="Enter role id"
-                value={formData.role_id}
+                type="tel"
+                name="mobile"
+                placeholder="Enter mobile number"
+                value={formData.mobile}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
-          
+
+            {/* User Role */}
+            <Form.Group className="dms-form-group">
+              <Form.Label>User Role</Form.Label>
+              <Form.Select
+                name="role_id"
+                value={formData.role_id}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Role</option>
+                <option value="Employee">Employee</option>
+                <option value="Vendor">Vendor</option>
+                <option value="Client">Client</option>
+              </Form.Select>
+            </Form.Group>
+
             {/* Password */}
             <Form.Group className="dms-form-group">
               <Form.Label>Password</Form.Label>
@@ -143,12 +187,13 @@ export const UserAdd = () => {
                 <option value="inactive">Inactive</option>
               </Form.Select>
             </Form.Group>
+
             {/* Buttons */}
-            <div className="d-flex ">
+            <div className="d-flex">
               <Button type="submit" variant="primary" className="me-2">
                 Save Changes
               </Button>
-              <Button type="cancel" onClick={() => navigate('/user')}>
+              <Button variant="secondary" onClick={() => navigate('/user')}>
                 Cancel
               </Button>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-    FaChartLine,FaClipboardList,
+    FaChartLine, FaClipboardList,
     FaUsers, FaUserShield,
     FaCogs, FaEnvelope,
     FaMotorcycle, FaTable,
@@ -80,7 +80,7 @@ export const Sidebar = ({ isOpen }) => {
                     )}
                 </li>
 
-{/* Developers */}
+                {/* Developers */}
                 <li className="dms-nav-item">
                     <div
                         className={`dms-nav-link text-white  ${openMenu === "developers" ? "active" : ""}`}
@@ -121,8 +121,8 @@ export const Sidebar = ({ isOpen }) => {
                     )}
                 </li>
 
-              {/* Admin */}
-              <li className="dms-nav-item">
+                {/* Admin */}
+                <li className="dms-nav-item">
                     <div
                         className={`dms-nav-link text-white  ${openMenu === "admin" ? "active" : ""}`}
                         onClick={() => handleMenuToggle("admin")}
@@ -146,7 +146,7 @@ export const Sidebar = ({ isOpen }) => {
                                     <a href="/admin-dashboard" className="dms-nav-link text-white">Dashboard</a>
                                 </div>
                             </li>
-                           
+
                             <li className="dms-nav-item">
                                 <div className="d-flex align-items-center">
                                     <FaCaretRight />
@@ -189,7 +189,7 @@ export const Sidebar = ({ isOpen }) => {
                 <li className="dms-nav-item">
                     <div
                         className={`dms-nav-link text-white ${openMenu === "master" ? "active" : ""}`}
-                        onClick={() => handleMenuToggle("master")}     
+                        onClick={() => handleMenuToggle("master")}
                     >
                         <div className="d-flex align-items-center">
                             <FaDatabase className="me-2" />
@@ -234,11 +234,11 @@ export const Sidebar = ({ isOpen }) => {
                 {/* Media Table */}
                 <li className="dms-nav-item">
                     <div
-                         className={`dms-nav-link text-white ${openMenu === "media" ? "active" : ""}`}
-                         onClick={() => handleMenuToggle("media")}      
+                        className={`dms-nav-link text-white ${openMenu === "media" ? "active" : ""}`}
+                        onClick={() => handleMenuToggle("media")}
                     >
                         <div className="d-flex align-items-center">
-                            <FaTable  className="me-2" />
+                            <FaTable className="me-2" />
                             <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Media Table</span>
                         </div>
                         <FaCaretDown
@@ -300,7 +300,7 @@ export const Sidebar = ({ isOpen }) => {
                         </ul>
                     )}
                 </li>
-            
+
                 {/* Contact Us */}
                 <li className="dms-nav-item">
                     <a
@@ -308,9 +308,9 @@ export const Sidebar = ({ isOpen }) => {
                         className={`dms-nav-link text-white ${activeMenu === "contactus" ? "active" : ""}`}
                         onClick={() => setActiveMenu("contactus")}
                     >
-                         <div className="d-flex align-items-center">
-                        <FaEnvelope className="me-2" />
-                        <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Contact Us</span>
+                        <div className="d-flex align-items-center">
+                            <FaEnvelope className="me-2" />
+                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Contact Us</span>
                         </div>
                     </a>
                 </li>
@@ -322,9 +322,9 @@ export const Sidebar = ({ isOpen }) => {
                         className={`dms-nav-link text-white ${activeMenu === "analytics" ? "active" : ""}`}
                         onClick={() => setActiveMenu("analytics")}
                     >
-                         <div className="d-flex align-items-center">
-                        <FaChartLine className="me-2" />
-                        <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Analytics & Reports</span>
+                        <div className="d-flex align-items-center">
+                            <FaChartLine className="me-2" />
+                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Analytics & Reports</span>
                         </div>
                     </a>
                 </li>
@@ -336,9 +336,9 @@ export const Sidebar = ({ isOpen }) => {
                         className={`dms-nav-link text-white ${activeMenu === "roles" ? "active" : ""}`}
                         onClick={() => setActiveMenu("roles")}
                     >
-                         <div className="d-flex align-items-center">
-                        <FaUserShield className="me-2" />
-                        <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Roles & Permission</span>
+                        <div className="d-flex align-items-center">
+                            <FaUserShield className="me-2" />
+                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Roles & Permission</span>
                         </div>
                     </a>
                 </li>
@@ -350,54 +350,26 @@ export const Sidebar = ({ isOpen }) => {
                         className={`dms-nav-link text-white ${activeMenu === "audit" ? "active" : ""}`}
                         onClick={() => setActiveMenu("audit")}
                     >
-                          <div className="d-flex align-items-center">
-                        <FaClipboardList className="me-2" />
-                        <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Audit & Logs</span>
+                        <div className="d-flex align-items-center">
+                            <FaClipboardList className="me-2" />
+                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Audit & Logs</span>
                         </div>
                     </a>
                 </li>
 
-                 {/* Settings */}
-                 <li className="dms-nav-item">
+                {/* Settings */}
+                <li className="dms-nav-item">
                     <a
                         href="/settings"
                         className={`dms-nav-link text-white ${activeMenu === "settings" ? "active" : ""}`}
                         onClick={() => setActiveMenu("settings")}
                     >
-                          <div className="d-flex align-items-center">
-                        <FaCogs className="me-2" />
-                        <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Settings</span>
+                        <div className="d-flex align-items-center">
+                            <FaCogs className="me-2" />
+                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Settings</span>
                         </div>
                     </a>
                 </li>
-     {/*            
-                <li className="dms-nav-item">
-                    <div
-                        className={`dms-nav-link text-white ${openMenu === "auth" ? "active" : ""}`}
-                        onClick={() => handleMenuToggle("auth")}     
-                    >
-                        <div className="d-flex align-items-center">
-                            <FaLock className="me-2" />
-                            <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Authentication</span>
-                        </div>
-                        <FaCaretDown
-                            className={`ms-auto ${openMenu === "user" ? "rotate" : ""} ${isOpen ? "hide-caret" : ""
-                                }`}
-                            style={{ transition: "transform 0.3s", display: isOpen ? "inline-block" : "none" }}
-
-                        />
-                    </div>
-                    {openMenu === "auth" && (
-                        <ul className="submenu show">
-                            <li className="dms-nav-item">
-                                <div className="d-flex align-items-center">
-                                    <FaCaretRight />
-                                    <a href="/login" className="dms-nav-link text-white">Login</a>
-                                </div>
-                            </li>
-                        </ul>
-                    )}
-                </li> */}
             </ul>
         </div>
     );

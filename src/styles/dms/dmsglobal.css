@@ -851,6 +851,7 @@ button.ms-2 {
 
 button[type="cancel"]:hover {
   background-color: var(--dark-muted-gray);
+  border: none;
 }
 
 .back-button {
@@ -864,6 +865,7 @@ button[type="cancel"]:hover {
   font-size: 0.9rem;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 .btn-primary svg {
@@ -924,7 +926,6 @@ button[type="cancel"]:hover {
     width: 50%;
   }
 }
-
 /* CSS for List Pages */
 
 /* Global Styles for Forms and Buttons fo Edit Page */
@@ -1028,7 +1029,6 @@ td.action {
   vertical-align: middle;
   position: relative;
 }
-
 /* Common styles for the action menu of vehicle and driver management */
 
 /* Images Css */

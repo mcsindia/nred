@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Table, InputGroup, Form, Pagination, Dropdown, DropdownButton } from 'react-bootstrap';
 import { FaEdit, FaTrash, FaEye, FaFileExport, FaPlus, FaFileExcel, FaFilePdf } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -7,12 +7,12 @@ import { AdminLayout } from '../../../layouts/dms/AdminLayout/AdminLayout';
 export const UserList = () => {
   const navigate = useNavigate();
 
-  // Initial User Data
+  // Initial User Data with new fields
   const initialUsers = [
-    { id: 1, username: 'john_doe', email: 'john@example.com', role_id: '101', is_active: true },
-    { id: 2, username: 'jane_smith', email: 'jane@example.com', role_id: '102', is_active: false },
-    { id: 3, username: 'alice_wonder', email: 'alice@example.com', role_id: '103', is_active: true },
-    { id: 4, username: 'bob_builder', email: 'bob@example.com', role_id: '104', is_active: true },
+    { id: 1, username: 'John Doe', designation: 'Manager', email: 'john@example.com', mobile: '9876543210', user_role: 'Admin', last_modified_by: 'Admin' },
+    { id: 2, username: 'Jane Smith', designation: 'Developer', email: 'jane@example.com', mobile: '9123456789', user_role: 'Employee', last_modified_by: 'HR' },
+    { id: 3, username: 'Alice Wonder', designation: 'Designer', email: 'alice@example.com', mobile: '8765432109', user_role: 'Vendor', last_modified_by: 'Admin' },
+    { id: 4, username: 'Bob Builder', designation: 'Supervisor', email: 'bob@example.com', mobile: '9638527410', user_role: 'Client', last_modified_by: 'Admin' },
   ];
 
   const [users, setUsers] = useState(initialUsers);
@@ -29,8 +29,8 @@ export const UserList = () => {
     const matchesSearch =
       user.username.toLowerCase().includes(search.toLowerCase()) ||
       user.email.toLowerCase().includes(search.toLowerCase()) ||
-      user.user_type.toLowerCase().includes(search.toLowerCase());
-    const matchesFilter = filter ? user.user_type === filter : true;
+      user.user_role.toLowerCase().includes(search.toLowerCase());
+    const matchesFilter = filter ? user.user_role === filter : true;
     return matchesSearch && matchesFilter;
   });
 
@@ -60,7 +60,7 @@ export const UserList = () => {
         <div className="dms-pages-header sticky-header">
           <h3>User List</h3>
           <div className="d-flex">
-            <DropdownButton variant="primary" title={<><FaFileExport /> Export</>} className="me-2 ">
+            <DropdownButton variant="primary" title={<><FaFileExport /> Export</>} className="me-2">
               <Dropdown.Item> <FaFileExcel className="icon-green" /> Export to Excel</Dropdown.Item>
               <Dropdown.Item> <FaFilePdf className="icon-red" /> Export to PDF</Dropdown.Item>
             </DropdownButton>
@@ -100,21 +100,25 @@ export const UserList = () => {
               <tr>
                 <th>S.no</th>
                 <th>Name</th>
+                <th>Designation</th>
                 <th>Email</th>
-                <th>Role Id</th>
-                <th>Status</th>
+                <th>Mobile</th>
+                <th>User Role</th>
+                <th>Last Modified By</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {currentUsers.length > 0 ? (
-                currentUsers.map((user) => (
+                currentUsers.map((user, index) => (
                   <tr key={user.id}>
-                    <td>{user.id}</td>
+                    <td>{indexOfFirstItem + index + 1}</td>
                     <td>{user.username}</td>
+                    <td>{user.designation}</td>
                     <td>{user.email}</td>
-                    <td>{user.role_id}</td>
-                    <td>{user.is_active ? 'Active' : 'Inactive'}</td>
+                    <td>{user.mobile}</td>
+                    <td>{user.user_role}</td>
+                    <td>{user.last_modified_by}</td>
                     <td>
                       <FaEye
                         title="View"
@@ -136,7 +140,7 @@ export const UserList = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="6" className="text-center">No users found.</td>
+                  <td colSpan="8" className="text-center">No users found.</td>
                 </tr>
               )}
             </tbody>

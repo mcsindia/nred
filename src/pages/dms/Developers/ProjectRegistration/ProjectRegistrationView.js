@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import { Tabs, Tab, Form, Button, Row, Col, Card, Table } from "react-bootstrap";
 import { AdminLayout } from "../../../../layouts/dms/AdminLayout/AdminLayout";
 
-export const ProjectRegistration = () => {
+export const ProjectRegistrationView = () => {
     const [activeTab, setActiveTab] = useState("individualOrCompany");
     const tabKeys = ["individualOrCompany", "projectDetails", "powerEvacuation", "documents"];
     const [formType, setFormType] = useState("individual"); // 'individual' or 'company'
     const [entityType, setEntityType] = useState(""); // Tracks selected entity type
     const [businessNature, setBusinessNature] = useState(""); // Tracks selected business nature
     const [uploadedFiles, setUploadedFiles] = useState({});
-
-    const handleGoBack = () => {
-        const currentIndex = tabKeys.indexOf(activeTab);
-        if (currentIndex > 0) {
-            setActiveTab(tabKeys[currentIndex - 1]);
-        }
-    };
 
     const handleSaveAndNext = () => {
         const currentIndex = tabKeys.indexOf(activeTab);
@@ -336,8 +329,8 @@ export const ProjectRegistration = () => {
 
 
                                     {/* Save & Next Button */}
-                                    <div className="text-center mt-4">
-                                        <Button onClick={handleSaveAndNext}>Save & Next</Button>
+                                    <div className="text-end mt-4">
+                                        <Button onClick={handleSaveAndNext}>Next</Button>
                                     </div>
                                 </Form>
                             </Tab>
@@ -667,10 +660,9 @@ export const ProjectRegistration = () => {
                                     </Form.Group>
 
                                     {/* Navigation Buttons */}
-                                    <div className="d-flex text-center justify-content-between">
+                                    <div className=" text-end">
 
-                                        <Button variant="secondary" onClick={handleGoBack}>Go Back</Button>
-                                        <Button variant="primary" onClick={handleSaveAndNext}>Save & Next</Button>
+                                        <Button variant="primary" onClick={handleSaveAndNext}>Next</Button>
                                     </div>
                                 </Form>
                             </Tab>
@@ -792,10 +784,9 @@ export const ProjectRegistration = () => {
                                     </Row>
 
                                     {/* Navigation Buttons */}
-                                    <div className="d-flex justify-content-between">
+                                    <div className="text-end">
 
-                                        <Button variant="secondary" onClick={handleGoBack}>Go Back</Button>
-                                        <Button variant="primary" onClick={handleSaveAndNext}>Save & Next</Button>
+                                        <Button variant="primary" onClick={handleSaveAndNext}> Next</Button>
                                     </div>
                                 </Form>
                             </Tab>
@@ -809,8 +800,9 @@ export const ProjectRegistration = () => {
                                         <tr>
                                             <th>S No.</th>
                                             <th>Documents</th>
-                                            <th>Sample Formats</th>
-                                            <th>Upload Documents (pdf, jpeg, jpg & png)</th>
+                                            <th>
+                                                Upload Documents (pdf, jpeg, jpg & png)
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -819,14 +811,27 @@ export const ProjectRegistration = () => {
                                                 <td>{index + 1}</td>
                                                 <td>{doc}</td>
                                                 <td>
-                                                    <Button variant="link" className="text-primary">
-                                                        View Sample
-                                                    </Button>
-                                                </td>
-                                                <td>
-                                                    <Form.Control
+                                                    {uploadedFiles[index] ? (
+                                                        <a
+                                                            href={URL.createObjectURL(uploadedFiles[index])}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            View Attached File
+                                                        </a>
+                                                    ) : (
+                                                        <Button
+                                                            variant="link"
+                                                            onClick={() => document.getElementById(`fileInput-${index}`).click()}
+                                                        >
+                                                            View Attach File
+                                                        </Button>
+                                                    )}
+                                                    <input
+                                                        id={`fileInput-${index}`}
                                                         type="file"
                                                         accept=".pdf,.jpeg,.jpg,.png"
+                                                        style={{ display: "none" }}
                                                         onChange={(e) => handleFileUpload(index, e.target.files[0])}
                                                     />
                                                 </td>
@@ -835,37 +840,34 @@ export const ProjectRegistration = () => {
                                     </tbody>
                                 </Table>
 
-                                {/* Navigation Buttons */}
-                                <div className="d-flex justify-content-between mt-4">
-                                    <div className="d-flex gap-3">
-                                        <Button variant="secondary" onClick={handleGoBack}>Go Back</Button>
-                                        <Button
-                                            variant="primary"
-                                            onClick={() => {
-                                                alert(
-                                                    "Your Details has been Saved in Draft Successfully.\n\nApplication Number is NRED101/2024"
-                                                );
-                                            }}
-                                        >
-                                            Save as Draft
-                                        </Button>
-                                    </div>
+                                {/* Status and Remark Section */}
+                                <Form.Group className="mt-3">
+                                    <Form.Label>Status</Form.Label>
+                                    <Form.Control as="select">
+                                        <option>Approve</option>
+                                        <option>Revert</option>
+                                        <option>Reject</option>
+                                    </Form.Control>
+                                </Form.Group>
 
+                                <Form.Group className="mt-2">
+                                    <Form.Label>Remark</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter remark (if any)" />
+                                </Form.Group>
+
+                                {/* Submit Button */}
+                                <div className="text-left mt-4">
                                     <Button
                                         variant="success"
                                         className="ml-auto"
                                         onClick={() => {
-                                            alert(
-                                                "Your Application details have been submitted successfully.\n\nApplication Number is NRED101/2024"
-                                            );
+                                            alert("The application details have been approved successfully.");
                                         }}
                                     >
                                         Submit
                                     </Button>
                                 </div>
                             </Tab>
-
-
                         </Tabs>
                     </Card.Body>
                 </Card>
