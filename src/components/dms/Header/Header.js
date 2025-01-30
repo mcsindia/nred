@@ -6,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 export const DMSHeader = ({ toggleSidebar }) => {
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState([
-    { id: 1, icon: <FaExclamationCircle />, type: "Server Error", message: "Server Error Reports", time: "3 minutes ago" },
-    { id: 2, icon: <FaComment />, type: "Message", message: "New message from John", time: "25 minutes ago" },
-    { id: 3, icon: <FaUserPlus />, type: "User Registered", message: "New User Registered", time: "1 hour ago" },
-    { id: 4, icon: <FaEnvelopeOpenText />, type: "Email", message: "New Email From John", time: "2 hours ago" },
+    { id: 1, icon: <FaExclamationCircle />, type: "Server Error", message: "Your project registration request number '123' has been rejected.", time: "3 minutes ago" },
+    { id: 2, icon: <FaComment />, type: "Message", message: "Your project registration request number '456' has been approved.", time: "25 minutes ago" },
+    { id: 3, icon: <FaUserPlus />, type: "User Registered", message: "Your LOA has been generated you can download now.", time: "1 hour ago" },
   ]);
 
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);

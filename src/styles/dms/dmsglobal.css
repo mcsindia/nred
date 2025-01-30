@@ -736,14 +736,14 @@ table {
 .table th {
   background-color: var(--dark-gray);
   color: var(--pure-white);
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   font-weight: bold;
   font-size: 0.95rem;
 }
 
 .table td {
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
 }
 
@@ -1059,20 +1059,7 @@ td.action {
 
 /* Css for all pages header */
 
-/* Css for driver id link and rider id link on tables */
-.driver-id-link,
-.rider-id-link {
-  text-decoration: none;
-  color: var(--black-color);
-}
 
-.driver-id-link:hover,
-.rider-id-link:hover {
-  text-decoration: none;
-  color: var(--primary-blue);
-}
-
-/* Css for driver id link and rider id link on tables */
 
 /* Cancel button color on filters  */
 .dropdown-item.text-custom-danger {
@@ -1235,15 +1222,8 @@ br {
   font-size: 1.2rem;
 }
 
-/* CSS Profile Basic Details */
-.profile-btn-container {
-  margin-top: 40px !important;
-  text-align: center;
+.profile-card img{
+  width: 8rem;
+  height: 8rem;
 }
-
-.profile-btn-container button {
-  padding: 6px 12px !important;
-}
-
-/* CSS Profile Basic Details */
 

@@ -9,11 +9,10 @@ export const ProjectRegistrationList = () => {
 
   // Initial Project Registration Data
   const initialProjects = [
-    { id: 1, name: 'Project Alpha', dateApplied: '2025-01-10', paymentStatus: 'Paid', registrationStatus: 'Completed' },
-    { id: 2, name: 'Project Beta', dateApplied: '2025-01-12', paymentStatus: 'Pending', registrationStatus: 'In Progress' },
-    { id: 3, name: 'Project Gamma', dateApplied: '2025-01-14', paymentStatus: 'Paid', registrationStatus: 'Completed' },
-    { id: 4, name: 'Project Delta', dateApplied: '2025-01-15', paymentStatus: 'Pending', registrationStatus: 'In Progress' },
-  ];
+    { id: 1, name: 'Omkareshwar Floating Solar Plant 250MW', dateApplied: '2025-01-10', paymentStatus: 'Paid', registrationStatus: 'Completed' },
+    { id: 2, name: 'Muraina Solar Plant 750MW', dateApplied: '2025-01-12', paymentStatus: 'Pending', registrationStatus: 'In Progress' },
+    { id: 3, name: 'Rewa Solar Plant', dateApplied: '2025-01-14', paymentStatus: 'Paid', registrationStatus: 'Completed' },
+   ];
 
   const [projects, setProjects] = useState(initialProjects);
   const [search, setSearch] = useState('');
@@ -68,7 +67,7 @@ export const ProjectRegistrationList = () => {
               <Dropdown.Item> <FaFileExcel className="icon-green" /> Import from Excel</Dropdown.Item>
               <Dropdown.Item> <FaFilePdf className="icon-red" /> Import from PDF</Dropdown.Item>
             </DropdownButton>
-            <Button variant="primary" onClick={() => navigate('/project/add')}>
+            <Button variant="primary" onClick={() => navigate('/project-registration/add')}>
               <FaPlus /> Add Project
             </Button>
           </div>
@@ -101,7 +100,7 @@ export const ProjectRegistrationList = () => {
             <thead>
               <tr>
                 <th>S.no</th>
-                <th>Name</th>
+                <th>Project Name</th>
                 <th>Date Applied</th>
                 <th>Payment Status</th>
                 <th>Registration Status</th>
