@@ -85,7 +85,7 @@ export const Sidebar = ({ isOpen }) => {
                             <li className="dms-nav-item">
                                 <div className="d-flex align-items-center">
                                     <FaCaretRight />
-                                    <a href="/developer-authentication" className="dms-nav-link text-white">Authentication</a>
+                                    <a href="/developer-login" className="dms-nav-link text-white">Authentication</a>
                                 </div>
                             </li>
                         </ul>
@@ -121,7 +121,7 @@ export const Sidebar = ({ isOpen }) => {
                             <li className="dms-nav-item">
                                 <div className="d-flex align-items-center">
                                     <FaCaretRight />
-                                    <a href="/admin-authentication" className="dms-nav-link text-white">Authentication</a>
+                                    <a href="/admin-login" className="dms-nav-link text-white">Authentication</a>
                                 </div>
                             </li>
                         </ul>
@@ -155,7 +155,7 @@ export const Sidebar = ({ isOpen }) => {
                             </li>
                         </ul>
                     )}
-                </li>   
+                </li>
             </ul>
         </div>
     );

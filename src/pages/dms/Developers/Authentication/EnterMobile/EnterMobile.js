@@ -20,10 +20,12 @@ export const EnterMobile = () => {
   };
 
   return (
-    <div className="authentication-container">
-      <Card className="authentication-card">
+    <div className="login-screen">
+    {/* Background Overlay */}
+    <div className="login-overlay"> </div>
+      <Card className="login-card">
         {/* Logo Image Section */}
-        <div className="text-center mb-4">
+        <div className="text-center">
           <img
             src={logo} // Image path
             alt="Logo"
@@ -31,7 +33,8 @@ export const EnterMobile = () => {
           />
         </div>
 
-        <h3 className="text-center mb-4">Enter Mobile Number</h3>
+        <h4 className="text-center mb-4">Developer Login</h4>
+        <div className="admin-login-form">
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>Mobile Number</Form.Label>
@@ -60,6 +63,7 @@ export const EnterMobile = () => {
             </Button>
           </div>
         </Form>
+        </div>
       </Card>
     </div>
   );

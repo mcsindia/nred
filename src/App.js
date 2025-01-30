@@ -37,15 +37,15 @@ function App() {
         <Route path='/project-registration' element={<ProjectRegistrationList/>}/>
         <Route path='/project-registration/add' element={<ProjectRegistration />} />
         {/* Developers Authentication Pages */}
-        <Route path='/developer-authentication' element={<EnterMobile />} />
+        <Route path='/developer-login' element={<EnterMobile />} />
         <Route path='enter-otp' element={<EnterOTP />} />
-        <Route path='/developer-authentication/forget-password' element={<ForgetPasswordForm />} />
-        <Route path='/developer-authentication/reset-password' element={<ResetPasswordForm />} />
+        <Route path='/developer-login/forget-password' element={<ForgetPasswordForm />} />
+        <Route path='/developer-login/reset-password' element={<ResetPasswordForm />} />
        <Route path='/registration/view' element={<ProjectRegistrationView/>}/>
         {/* Admin */}
         <Route path='/admin-dashboard' element={<AdminDashboard />} />
         {/* Admin Authentication */}
-        <Route path='/admin-authentication' element={<AdminLogin />} />
+        <Route path='/admin-login' element={<AdminLogin />} />
 
         {/* User */}
         <Route path='/user' element={<UserList />} />

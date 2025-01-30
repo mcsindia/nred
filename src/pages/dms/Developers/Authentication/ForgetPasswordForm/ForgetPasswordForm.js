@@ -9,19 +9,21 @@ export const ForgetPasswordForm = () => {
 
   const handleReset = () => {
     // Navigate to the Reset Password page
-    navigate('/developer-authentication/reset-password'); // Replace with the actual route
+    navigate('/developer-login/reset-password'); // Replace with the actual route
   };
 
   const handleBack = () => {
     // Navigate back to the Login page
-    navigate('/login'); // Replace with the actual route
+    navigate('/developer-login'); // Replace with the actual route
   };
 
   return (
-    <div className="authentication-container">
-      <Card className="authentication-card">
+     <div className="login-screen">
+        {/* Background Overlay */}
+        <div className="login-overlay"> </div>
+          <Card className="login-card">
         {/* Logo Image Section */}
-        <div className="text-center mb-4">
+        <div className="text-center">
           <img
             src={logo} // Image path
             alt="Logo"
@@ -29,8 +31,8 @@ export const ForgetPasswordForm = () => {
           />
         </div>
         
-        <h3 className="text-center mb-4">Forget Password</h3>
-        
+        <h4 className="text-center mb-4">Forget Password</h4>
+        <div className="admin-login-form">
         <Form>
           {/* Mobile Number Field */}
           <Form.Group className="mb-3">
@@ -62,6 +64,7 @@ export const ForgetPasswordForm = () => {
             </Button>
           </div>
         </Form>
+        </div>
       </Card>
     </div>
   );

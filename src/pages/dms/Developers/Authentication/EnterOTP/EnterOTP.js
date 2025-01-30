@@ -18,9 +18,8 @@ export const EnterOTP = () => {
 
   const handleSubmit = () => {
     if (otp) {
-      alert('OTP Verified');
       // Navigate to the Create Password page
-      navigate('/create-password', { state: { mobile } });
+      navigate('/developer-dashboard', { state: { mobile } });
     } else {
       alert('Please enter the OTP');
     }
@@ -32,16 +31,19 @@ export const EnterOTP = () => {
   };
 
   return (
-    <div className="authentication-container">
-      <Card className="authentication-card">
-        <div className="text-center mb-4">
+      <div className="login-screen">
+        {/* Background Overlay */}
+        <div className="login-overlay"> </div>
+          <Card className="login-card">
+        <div className="text-center">
           <img
             src={logo} // Image path
             alt="Logo"
             className="img-fluid auth-logo-img"
           />
         </div>
-        <h3 className="text-center mb-4">Enter OTP</h3>
+        <h4 className="text-center mb-4">Enter OTP</h4>
+        <div className="admin-login-form">
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>Mobile Number</Form.Label>
@@ -80,7 +82,8 @@ export const EnterOTP = () => {
             </Button>
           </div>
         </Form>
+        </div>
       </Card>
-    </div>
+    </div>    
   );
 };

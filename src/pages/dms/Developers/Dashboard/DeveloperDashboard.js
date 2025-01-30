@@ -20,7 +20,11 @@ export const DeveloperDashboard = () => {
             <Col key={index} md={6} lg={3} className="mb-4">
               <Card className={`text-white bg-${stat.bg} shadow`}>
                 <Card.Body>
-                  <Card.Title className="text-center">{stat.title}</Card.Title>
+                  <Card.Title className="text-center">
+                    <Card.Link href="/project-registration" className="project-registration-link">
+                      {stat.title}
+                    </Card.Link>
+                  </Card.Title>
                   <h3 className="text-center">{stat.count}</h3>
                 </Card.Body>
               </Card>

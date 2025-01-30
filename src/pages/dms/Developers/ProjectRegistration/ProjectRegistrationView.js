@@ -480,8 +480,6 @@ export const ProjectRegistrationView = () => {
                                                 <Form.Label>State*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Madhya Pradesh</option>
-                                                    <option>Uttar Pradesh</option>
-                                                    <option>Maharashtra</option>
                                                 </Form.Control>
                                             </Form.Group>
                                         </Col>
@@ -489,9 +487,59 @@ export const ProjectRegistrationView = () => {
                                             <Form.Group controlId="district">
                                                 <Form.Label>District*</Form.Label>
                                                 <Form.Control as="select" required>
+                                                    <option>Select District</option>
+                                                    <option>Agar Malwa</option>
+                                                    <option>Alirajpur</option>
+                                                    <option>Anuppur</option>
+                                                    <option>Ashoknagar</option>
+                                                    <option>Balaghat</option>
+                                                    <option>Barwan</option>
+                                                    <option>Betul</option>
+                                                    <option>Bhind</option>
                                                     <option>Bhopal</option>
-                                                    <option>Prayagraj</option>
-                                                    <option>Mumbai</option>
+                                                    <option>Burhanpur</option>
+                                                    <option>Chhatarpur</option>
+                                                    <option>Chhindwara</option>
+                                                    <option>Damoh</option>
+                                                    <option>Datia</option>
+                                                    <option>Dewas</option>
+                                                    <option>Dhar</option>
+                                                    <option>Dindori</option>
+                                                    <option>East Nimar</option>
+                                                    <option>Guna</option>
+                                                    <option>Gwalior</option>
+                                                    <option>Harda</option>
+                                                    <option>Hoshangabad</option>
+                                                    <option>Indore</option>
+                                                    <option>Jabalpur</option>
+                                                    <option>Jhabua</option>
+                                                    <option>Katni</option>
+                                                    <option>Mandla</option>
+                                                    <option>Mandsaur</option>
+                                                    <option>Morena</option>
+                                                    <option>Narsinghpur</option>
+                                                    <option>Neemuch</option>
+                                                    <option>Niwari</option>
+                                                    <option>Panna</option>
+                                                    <option>Raisen</option>
+                                                    <option>Rajgarh</option>
+                                                    <option>Ratlam</option>
+                                                    <option>Rewa</option>
+                                                    <option>Sagar</option>
+                                                    <option>Satna</option>
+                                                    <option>Sehore</option>
+                                                    <option>Seoni</option>
+                                                    <option>Shahdol</option>
+                                                    <option>Shajapur</option>
+                                                    <option>Sheopur</option>
+                                                    <option>Shivpuri</option>
+                                                    <option>Sidhi</option>
+                                                    <option>Singrauli</option>
+                                                    <option>Tikamgarh</option>
+                                                    <option>Ujjain</option>
+                                                    <option>Umaria</option>
+                                                    <option>Vidisha</option>
+                                                    <option>West Nimar</option>
                                                 </Form.Control>
                                             </Form.Group>
                                         </Col>
@@ -502,13 +550,103 @@ export const ProjectRegistrationView = () => {
                                         <Col md={6}>
                                             <Form.Group controlId="tehsil">
                                                 <Form.Label>Tehsil*</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Tehsil" required />
+                                                <Form.Control as="select" required>
+                                                    <option>Select Tehsil</option>
+                                                    <option>Ajaygarh</option>
+                                                    <option>Alirajpur</option>
+                                                    <option>Amarwara</option>
+                                                    <option>Araon</option>
+                                                    <option>Badnagar</option>
+                                                    <option>Bagli</option>
+                                                    <option>Bajna</option>
+                                                    <option>Banapura</option>
+                                                    <option>Barwani</option>
+                                                    <option>Basoda</option>
+                                                    <option>Biaora</option>
+                                                    <option>Bilaspur</option>
+                                                    <option>Birsinghpur</option>
+                                                    <option>Chhatarpur</option>
+                                                    <option>Chhindwara</option>
+                                                    <option>Datia</option>
+                                                    <option>Dewas</option>
+                                                    <option>Garoth</option>
+                                                    <option>Gohad</option>
+                                                    <option>Guna</option>
+                                                    <option>Harda</option>
+                                                    <option>Indore</option>
+                                                    <option>Itarsi</option>
+                                                    <option>Jabalpur</option>
+                                                    <option>Jhabua</option>
+                                                    <option>Katni</option>
+                                                    <option>Khandwa</option>
+                                                    <option>Khurai</option>
+                                                    <option>Maheshwar</option>
+                                                    <option>Malhargarh</option>
+                                                    <option>Mandla</option>
+                                                    <option>Manawar</option>
+                                                    <option>Morena</option>
+                                                    <option>Murwara</option>
+                                                    <option>Neemuch</option>
+                                                    <option>Pachore</option>
+                                                    <option>Pali</option>
+                                                    <option>Pansemal</option>
+                                                    <option>Pathariya</option>
+                                                    <option>Petlawad</option>
+                                                    <option>Pipariya</option>
+                                                    <option>Rahatgarh</option>
+                                                    <option>Rajgarh</option>
+                                                    <option>Raisen</option>
+                                                    <option>Rajpur</option>
+                                                    <option>Rudrasagar</option>
+                                                    <option>Sanchi</option>
+                                                    <option>Santuli</option>
+                                                    <option>Sehore</option>
+                                                    <option>Seoni</option>
+                                                    <option>Sirmour</option>
+                                                    <option>Ujjain</option>
+                                                    <option>Vidisha</option>
+                                                    <option>Zirapur</option>
+                                                </Form.Control>
                                             </Form.Group>
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="village">
                                                 <Form.Label>Village*</Form.Label>
-                                                <Form.Control type="text" placeholder="Enter Village" required />
+                                                <Form.Control as="select" required>
+                                                    <option>Select Village</option>
+                                                    <option>Adampur</option>
+                                                    <option>Alapur</option>
+                                                    <option>Amjora</option>
+                                                    <option>Angaon</option>
+                                                    <option>Antari</option>
+                                                    <option>Areech</option>
+                                                    <option>Barai</option>
+                                                    <option>Barwani</option>
+                                                    <option>Bhorasa</option>
+                                                    <option>Bargi</option>
+                                                    <option>Bajrangpura</option>
+                                                    <option>Bhivpur</option>
+                                                    <option>Bhopal</option>
+                                                    <option>Chhindwara</option>
+                                                    <option>Chhoti Sarai</option>
+                                                    <option>Dewas</option>
+                                                    <option>Fatehpur</option>
+                                                    <option>Garoth</option>
+                                                    <option>Guna</option>
+                                                    <option>Indore</option>
+                                                    <option>Jabalpur</option>
+                                                    <option>Jhirniya</option>
+                                                    <option>Katni</option>
+                                                    <option>Khargone</option>
+                                                    <option>Khandwa</option>
+                                                    <option>Madhya Pradesh Village 1</option>
+                                                    <option>Madhya Pradesh Village 2</option>
+                                                    <option>Morena</option>
+                                                    <option>Pachore</option>
+                                                    <option>Seoni</option>
+                                                    <option>Shahdol</option>
+                                                    <option>Ujjain</option>
+                                                </Form.Control>
                                             </Form.Group>
                                         </Col>
                                     </Row>

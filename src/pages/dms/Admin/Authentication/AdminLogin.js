@@ -37,21 +37,20 @@ export const AdminLogin = () => {
    };
  
    return (
-     <div className="admin-login-screen">
+     <div className="login-screen">
        {/* Background Overlay */}
-       <div className="admin-overlay"></div>
+       <div className="login-overlay"></div>
  
        {/* Header Section with Logo and Department Name */}
        <div className="admin-header">
          <img src={logo} alt="Government Logo" className="auth-logo-img" />
-         <h2 className="text-white">New And Renewable Energy Department</h2>
+         <h4 className="text-white">New And Renewable Energy Department</h4>
          <p className="text-white">Government of Madhya Pradesh</p>
        </div>
  
        {/* Login Box */}
-       <Card className="admin-login-card">
+       <Card className="login-card">
          <h4 className="text-center mb-3">Login</h4>
- 
          <div className="admin-login-form">
            <Form>
              <Form.Group className="mb-3">

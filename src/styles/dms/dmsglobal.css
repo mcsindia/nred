@@ -583,7 +583,6 @@ hr {
 .dms-sidebar.closed .dms-nav-item:hover>.submenu {
   display: block;
 }
-
 /* Sidebar */
 
 /* Footer */
@@ -598,7 +597,6 @@ hr {
   padding: 15px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
-
 /* Footer */
 
 /* Admin Layout css */
@@ -687,15 +685,15 @@ hr {
   font-weight: bold;
   color: var(--dark-gray);
 }
-
 /* Dashboard Cards */
 
-/* Auth Background css */
-.dms-auth-wrapper {
-  background-color: var(--light-gray);
+/* Developer Dashboard card link */
+.project-registration-link{
+  color: #fff;
+  text-decoration: none
 }
+/* Developer Dashboard card link */
 
-/* Auth Background css */
 
 /* Global Styles for List Pages */
 /* Container Styling */
@@ -872,6 +870,12 @@ button[type="cancel"]:hover {
   margin-right: 5px;
 }
 
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust the gap size as needed */
+}
+
 .icon-blue {
   color: var(--basic-blue);
   cursor: pointer;
@@ -950,8 +954,6 @@ button[type="cancel"]:hover {
   font-size: 1rem;
 }
 
-.dms-table-container
-
 /* Checkbox Styling */
 .form-check-label {
   font-size: 1rem;
@@ -972,82 +974,7 @@ h3 {
 .alert-danger {
   margin-top: 1.5rem;
 }
-
 /* Css For Button and Forms Edit Page */
-
-/* Common styles for the action menu of vehicle and driver management */
-.dms-show-actions-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: 1;
-  background: var(--white);
-  border: 1px solid var(--medium-gray);
-  border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 0.5rem;
-  max-width: 200px;
-  /* Ensure the menu is not too wide */
-  white-space: nowrap;
-  /* Prevent text from wrapping */
-  overflow: hidden;
-  /* Hide overflowing text */
-  text-overflow: ellipsis;
-  /* Add ellipsis for overflowed text */
-}
-
-.dms-show-actions-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.dms-show-actions-menu li {
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.dms-show-actions-menu li:hover {
-  background-color: var(--off-white);
-}
-
-.dms-menu-icon {
-  margin-right: 8px;
-}
-
-.dms-span-action {
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--dark-charcoal);
-  /* Default color */
-}
-
-td.action {
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-}
-/* Common styles for the action menu of vehicle and driver management */
-
-/* Images Css */
-/* Profile Image */
-.profile-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border: none;
-  margin-right: 15px;
-}
-
-/* Vehicle image */
-.vehicle-img {
-  width: 200px;
-  height: auto;
-}
-
-/* Images Css */
 
 /* Css for all pages header */
 .dms-pages-header {
@@ -1056,37 +983,21 @@ td.action {
   align-items: center;
   margin-bottom: 1rem;
 }
-
 /* Css for all pages header */
-
-
 
 /* Cancel button color on filters  */
 .dropdown-item.text-custom-danger {
   color: var(--danger-red);
 }
-
 /* Cancel button color on filters  */
 
-/* For Project Registration */
-h2 {
-  color: #333;
-  margin-bottom: 20px;
+/* Authentication Css */
+/* Logo */
+.auth-logo-img {
+  width: 120px;
+  height: auto;
 }
-
-.authentication-container {
-  height: 100vh;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.authentication-card {
-  width: 400px !important;
-  padding: 20px !important;
-  border-radius: 15px !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-}
+/* Logo */
 
 /* Style for captcha display */
 .captcha-text {
@@ -1116,15 +1027,8 @@ h2 {
   margin-top: 5px;
 }
 
-.auth-logo-img {
-  width: 80px;
-  height: auto;
-}
-
-/* For Project Registration */
-
 /* Full-screen background */
-.admin-login-screen {
+.login-screen {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -1136,7 +1040,7 @@ h2 {
 }
 
 /* Blue overlay effect */
-.admin-overlay {
+.login-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1160,7 +1064,7 @@ h2 {
 }
 
 /* Login Card */
-.admin-login-card {
+.login-card {
   position: relative;
   z-index: 1;
   width: 400px;
@@ -1190,11 +1094,6 @@ h2 {
   border-radius: 6px;
 }
 
-.refresh-icon {
-  cursor: pointer;
-  color: #444;
-}
-
 .profile-header,
 .project-registration-header {
   background-color: #F5F5F5;
@@ -1222,8 +1121,14 @@ br {
   font-size: 1.2rem;
 }
 
+/* My profile page css */
 .profile-card img{
   width: 8rem;
   height: 8rem;
 }
+/* My profile page css */
 
+/* Longitude latitude add button */
+.longitude-latitude-add{
+  margin-top: 31px;
+}
