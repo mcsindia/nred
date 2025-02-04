@@ -1,6 +1,6 @@
 import '../src/styles/dms/dmsglobal.css'
+import '../src/styles/web/webglobal.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { AdminLayout } from './layouts/dms/AdminLayout/AdminLayout'
 /* My Profile */
 import { Profile } from './pages/dms/Profile/Profile';
 /* User Management */
@@ -19,13 +19,14 @@ import { AdminDashboard } from './pages/dms/Admin/Dashboard/AdminDashboard';
 import { AdminLogin } from './pages/dms/Admin/Authentication/AdminLogin';
 import { ProjectRegistrationList } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationList';
 import { ProjectRegistrationView } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationView';
+import { Home } from './pages/web/Home/Home';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* Dashboard */}
-        <Route path='/' element={ <DeveloperDashboard />} />
+        <Route path='/' element={ <Home/>} />
 
         {/* Profile Page */}
         <Route path='/profile' element={<Profile />} />
@@ -51,8 +52,6 @@ function App() {
         <Route path='/user' element={<UserList />} />
         <Route path='/user/add' element={<UserAdd />} />
         <Route path='/user/edit' element={<UserEdit />} />
-
-       
       </Routes>
     </BrowserRouter>
   );
