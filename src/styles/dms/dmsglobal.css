@@ -163,7 +163,6 @@ hr {
     font-size: 1rem;
   }
 }
-
 /* Header */
 
 /* Notification */
@@ -1131,4 +1130,46 @@ br {
 /* Longitude latitude add button */
 .longitude-latitude-add{
   margin-top: 31px;
+}
+
+/* Loa */
+/* Media query for print */
+
+/* When printing */
+@media print {
+  /* Hide the whole layout structure */
+  .dms-header,
+  .dms-sidebar,
+  .dms-footer, .print-button {
+    display: none !important;
+  }
+
+  /* Ensure only the LOA content is visible */
+  #loa-content {
+    display: block !important;
+  }
+
+  /* Hide any buttons or extra elements like the print button */
+  .loa-form-container button {
+    display: none !important;
+  }
+
+  /* Ensure the content is laid out properly for printing */
+  .loa-form-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: none !important;
+  }
+}
+
+.salutation-list{
+  list-style: none;
 }

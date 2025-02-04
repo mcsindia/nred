@@ -19,7 +19,9 @@ import { AdminDashboard } from './pages/dms/Admin/Dashboard/AdminDashboard';
 import { AdminLogin } from './pages/dms/Admin/Authentication/AdminLogin';
 import { ProjectRegistrationList } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationList';
 import { ProjectRegistrationView } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationView';
+/* Web */
 import { Home } from './pages/web/Home/Home';
+import { LoaForm } from './pages/dms/Developers/LoaForm/LoaForm';
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
         {/* Developers Project Registration */}
         <Route path='/project-registration' element={<ProjectRegistrationList/>}/>
         <Route path='/project-registration/add' element={<ProjectRegistration />} />
+        <Route path='/loa-form' element={<LoaForm/>} />
         {/* Developers Authentication Pages */}
         <Route path='/developer-login' element={<EnterMobile />} />
         <Route path='enter-otp' element={<EnterOTP />} />
@@ -52,6 +55,8 @@ function App() {
         <Route path='/user' element={<UserList />} />
         <Route path='/user/add' element={<UserAdd />} />
         <Route path='/user/edit' element={<UserEdit />} />
+
+       
       </Routes>
     </BrowserRouter>
   );
