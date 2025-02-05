@@ -9,11 +9,10 @@ export const ProjectRegistrationList = () => {
 
   // Initial Project Registration Data
   const initialProjects = [
-    { id: 1, name: 'Omkareshwar Floating Solar Plant 250MW', dateApplied: '2025-01-10', paymentStatus: 'Paid', registrationStatus: 'Completed' },
-    { id: 2, name: 'Morena Solar Plant 750MW', dateApplied: '2025-01-12', paymentStatus: 'Pending', registrationStatus: 'pending' },
-    { id: 3, name: 'Rewa Solar Plant', dateApplied: '2025-01-14', paymentStatus: 'Under review', registrationStatus: 'Under review' },
+    { id: 1, name: 'Omkareshwar Floating Solar Plant 250MW', dateApplied: '2025-01-10', paymentStatus: 'Pending', registrationStatus: 'Pending' },
+    { id: 2, name: 'Morena Solar Plant 750MW', dateApplied: '2025-01-12', paymentStatus: 'under review', registrationStatus: 'Under Review' },
+    { id: 3, name: 'Rewa Solar Plant', dateApplied: '2025-01-14', paymentStatus: 'Paid', registrationStatus: 'Completed' },
   ];
-
 
   const [projects, setProjects] = useState(initialProjects);
   const [search, setSearch] = useState('');
@@ -116,87 +115,35 @@ export const ProjectRegistrationList = () => {
                     <td>{project.name}</td>
                     <td>{project.dateApplied}</td>
                     <td>
-                      {/* Payment Status Handling */}
-                      {project.paymentStatus === 'Paid' ? (
-                        <>
-                          <span>Paid</span>
-                          <FaDownload
-                            title="Download Receipt"
-                            className="icon-black ms-2"
-                            style={{ cursor: 'pointer' }}
-                            onClick={() => console.log(`Downloading receipt for ${project.name}`)}
-                          />
-                        </>
-                      ) : project.paymentStatus === 'Under review' ? (
-                        <>
-                          <span>Under Review</span>
-                        </>
-                      ) : project.paymentStatus === 'Pending' ? (
-                        <>
-                          <Button
-                            variant="primary"
-                            size="sm"
-                            onClick={() => console.log(`Processing payment for ${project.name}`)}
-                          >
-                            Pay
-                          </Button>
-                        </>
-                      ) : null}
-                    </td>
-                    <td>
-                      {/* Registration Status Handling */}
-                      {project.registrationStatus.toLowerCase() === 'completed' ? (
-                        <span>Completed</span>
-                      ) : project.registrationStatus.toLowerCase() === 'pending' ? (
-                        <span>Pending</span>
-                      ) : project.registrationStatus.toLowerCase() === 'under review' ? (
+                      {project.paymentStatus === 'Pending' ? (
+                        <Button variant="primary" size="sm">Pay</Button>
+                      ) : project.paymentStatus === 'under review' ? (
                         <span>Under Review</span>
+                      ) : project.paymentStatus === 'Paid' ? (
+                        <span>
+                          Paid
+                          <FaDownload
+                            className="icon-black ms-2"
+                            onClick={() => navigate('/loa-form', { state: { project } })}
+                            title="Download LOA Form"
+                          />
+                        </span>
                       ) : null}
                     </td>
+
+                    <td>{project.registrationStatus}</td>
                     <td>
-                      <FaEye
-                        title="View"
-                        className="icon-blue me-2"
-                        onClick={() => handleView(project)}
-                      />
-                      <FaEdit
-                        title="Edit"
-                        className="icon-green"
-                        onClick={() => handleEdit(project)}
-                      />
+                      <FaEye className="icon-blue me-2" onClick={() => handleView(project)} />
+                      <FaEdit className="icon-green" onClick={() => handleEdit(project)} />
                     </td>
                   </tr>
                 ))
               ) : (
-                <tr>
-                  <td colSpan="6" className="text-center">No projects found.</td>
-                </tr>
+                <tr><td colSpan="6" className="text-center">No projects found.</td></tr>
               )}
             </tbody>
-
           </Table>
         </div>
-
-        {/* Pagination */}
-        <Pagination className="justify-content-center">
-          <Pagination.Prev
-            onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          />
-          {[...Array(totalPages)].map((_, index) => (
-            <Pagination.Item
-              key={index + 1}
-              active={index + 1 === currentPage}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </Pagination.Item>
-          ))}
-          <Pagination.Next
-            onClick={() => handlePageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          />
-        </Pagination>
       </div>
     </AdminLayout>
   );

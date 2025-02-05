@@ -7,7 +7,7 @@ export const Home = () => {
 
   const handleLogin = (userType, path) => {
     localStorage.setItem("userType", userType);
-    console.log("Stored userType:", userType); 
+    console.log("Stored userType:", userType); // Debugging log
     navigate(path);
   };
 
