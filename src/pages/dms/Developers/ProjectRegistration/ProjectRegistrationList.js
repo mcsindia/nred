@@ -44,7 +44,7 @@ export const ProjectRegistrationList = () => {
 
   // View Action
   const handleView = (project) => {
-    navigate('/project/view', { state: { project } });
+    navigate('/registration/view', { state: { project } });
   };
 
   // Edit Action

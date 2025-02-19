@@ -36,233 +36,306 @@ hr {
   margin: 0;
 }
 
-/* Header Styles */
-.dms-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: var(--light-gray);
-  height: 60px;
-  border-bottom: 1px solid var(--medium-gray);
-}
-
-.dms-header-nav {
-  flex-grow: 1;
-  /* Allows the navigation links to stretch across the header */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  /* Aligns the navigation links to the left */
-}
-
-.dms-header-nav.active {
-  display: block;
-  /* Displays the nav links when the menu is open on small screens */
-}
-
-.dms-header-link {
-  text-decoration: none;
-  color: var(--dark-gray);
-  font-weight: 500;
-  margin-right: 15px;
-  /* Adds spacing between the links */
-  transition: color 0.3s ease;
-}
-
-.dms-header-link:hover {
-  color: var(--link-blue);
-}
-
-.dms-header-right {
-  display: flex;
-  align-items: center;
-}
-
-.dms-header-right .btn {
-  background-color: transparent;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-/* Dropdown styles */
-.dms-header-right .dropdown-toggle {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  padding: 10px;
-  color: var(--muted-gray);
-}
-
-.dms-header-right .dropdown-menu {
-  border-radius: 5px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.dms-header-right .dropdown-menu .dropdown-item {
-  font-size: 14px;
-}
-
-.dms-header-right .dropdown-menu .dropdown-item:hover {
-  background-color: var(--dark-blue);
-  color: var(--pure-white);
-}
-
-/* Hamburger Menu Button */
-.dms-header .btn-light {
-  background-color: transparent;
-  border: none;
-  padding: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-  /* Mobile View: Hide the main navigation and show the hamburger icon */
-  .dms-header-nav {
-    display: none;
-    /* Initially hide the nav */
-    flex-direction: column;
-    /* Stack the nav items vertically */
-    text-align: center;
+  /* Header Styles */
+  .dms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--light-gray);
+    height: 60px;
+    border-bottom: 1px solid var(--medium-gray);
     width: 100%;
   }
 
-  .dms-header-nav.active {
-    display: block;
-    /* Show the nav links when the menu is active */
+  /* Navigation */
+  .dms-header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
   }
 
-  .dms-header-nav .header-link {
-    margin: 10px 0;
-    /* Vertical spacing for mobile */
-    font-size: 1.2rem;
-  }
-
-  /* Align right section on small screens */
-  .dms-header-right {
-    display: none;
-    /* Hide right icons on small screens */
-  }
-
-  .dms-header .btn-light {
-    font-size: 18px;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 576px) {
   .dms-header-link {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    margin-right: 20px;
     font-size: 1rem;
-    /* Adjust font size on very small screens */
+    transition: color 0.3s ease;
   }
 
+  .dms-header-link:hover {
+    color: var(--link-blue);
+  }
+
+  /* Right Section */
+  .dms-header-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .dms-header-right .btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Dropdown styles */
   .dms-header-right .dropdown-toggle {
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    color: var(--muted-gray);
   }
-}
-/* Header */
 
-/* Notification */
-.dms-notification-list {
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  width: 300px;
-  border-radius: 8px;
-  background-color: var(--white);
-  z-index: 1050;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+  .dms-header-right .dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  }
 
-.dms-notification-list h6 {
-  margin-bottom: 16px;
-  font-size: 16px;
-  font-weight: bold;
-}
+  .dms-header-right .dropdown-menu .dropdown-item {
+    font-size: 14px;
+  }
 
-/* Style for the notification badge */
-.btn-light.position-relative .badge {
-  position: absolute;
-  top: 10px;
-  /* Adjust vertical alignment */
-  transform: translate(-50%, -50%);
-  background-color: var(--danger-red);
-  /* Red color for the badge */
-  color: var(--pure-white);
-  font-size: 12px;
-  /* Adjust size of the badge text */
-  padding: 4px 6px;
-  /* Space inside the badge */
-  border-radius: 50%;
-  /* Makes it circular */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Optional: Adds depth */
-}
+  .dms-header-right .dropdown-menu .dropdown-item:hover {
+    background-color: var(--dark-blue);
+    color: var(--pure-white);
+  }
 
-.dms-notification-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  /* Hamburger Menu Button */
+  .dms-header .btn-light {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
 
-.dms-notification-list li {
-  display: flex;
-  align-items: start;
-  margin-bottom: 12px;
-}
+  /* === Responsive Design === */
 
-.dms-notification-list ul li {
-  display: flex;
-  align-items: start;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+  /* Tablets & Small Laptops */
+  @media (max-width: 1024px) {
+    .dms-header {
+      padding: 10px 15px;
+    }
 
-.dms-notification-list ul li:hover {
-  background-color: var(--light-gray);
-  /* Light gray background */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow */
-  cursor: pointer;
-}
+    .dms-header-link {
+      font-size: 0.95rem;
+      margin-right: 15px;
+    }
 
-.dms-notification-list ul li .text-muted {
-  color: var(--muted-gray);
-}
+    .dms-header-right .dropdown-toggle {
+      font-size: 0.9rem;
+    }
+  }
 
-.dms-notification-list li div:first-child {
-  margin-right: 8px;
-}
+  /* Mobile View: Hide the main navigation and show the hamburger icon */
+  @media (max-width: 768px) {
+    .dms-header-nav {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: var(--light-gray);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
 
-.dms-notification-list ul li:last-child {
-  border-bottom: none;
-  /* Remove divider for the last item */
-}
+    .dms-header-nav.active {
+      display: flex;
+    }
 
-.dms-notification-list ul li div {
-  margin-right: 10px;
-  /* Reduce space between icon and text */
-}
+    .dms-header-nav .dms-header-link {
+      margin: 15px 0;
+      font-size: 1.2rem;
+    }
 
-.dms-notification-list li small {
-  color: var(--muted-gray);
-}
+    /* Hide right section on small screens */
+    .dms-header-right {
+      display: none;
+    }
 
-.dms-notification-list hr {
-  border-top: 2px solid var(--border-gray);
-  margin: 12px 0;
-}
+    .dms-header .btn-light {
+      font-size: 24px;
+      padding: 10px;
+    }
+  }
 
-.dms-notification-list .btn-link {
-  color: var(--primary-blue);
-  font-size: 14px;
-}
+  /* Small Phones */
+  @media (max-width: 480px) {
+    .dms-header {
+      padding: 10px;
+      height: 55px;
+    }
 
-/* Notification */
+    .dms-header-link {
+      font-size: 0.9rem;
+    }
+
+    .dms-header-right .dropdown-toggle {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* iPads & Large Tablets */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .dms-header {
+      padding: 12px 18px;
+    }
+
+    .dms-header-nav {
+      justify-content: center;
+    }
+
+    .dms-header-link {
+      font-size: 1rem;
+    }
+  }
+  /* Header */
+
+  /* Notification */
+  .dms-notification-list {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: var(--white);
+    z-index: 1050;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .dms-notification-list h6 {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* Style for the notification badge */
+  .btn-light.position-relative .badge {
+    position: absolute;
+    top: 20px;
+    /* Adjust vertical alignment */
+    transform: translate(-50%, -50%);
+    background-color: var(--danger-red);
+    /* Red color for the badge */
+    color: var(--pure-white);
+    font-size: 12px;
+    /* Adjust size of the badge text */
+    padding: 4px 6px;
+    /* Space inside the badge */
+    border-radius: 50%;
+    /* Makes it circular */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Optional: Adds depth */
+  }
+
+  .dms-notification-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dms-notification-list li {
+    display: flex;
+    align-items: start;
+    margin-bottom: 12px;
+  }
+
+  .dms-notification-list ul li {
+    display: flex;
+    align-items: start;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dms-notification-list ul li:hover {
+    background-color: var(--light-gray);
+    /* Light gray background */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    cursor: pointer;
+  }
+
+  .dms-notification-list ul li .text-muted {
+    color: var(--muted-gray);
+  }
+
+  .dms-notification-list li div:first-child {
+    margin-right: 8px;
+  }
+
+  .dms-notification-list ul li:last-child {
+    border-bottom: none;
+    /* Remove divider for the last item */
+  }
+
+  .dms-notification-list ul li div {
+    margin-right: 10px;
+    /* Reduce space between icon and text */
+  }
+
+  .dms-notification-list li small {
+    color: var(--muted-gray);
+  }
+
+  .dms-notification-list hr {
+    border-top: 2px solid var(--border-gray);
+    margin: 12px 0;
+  }
+
+  .dms-notification-list .btn-link {
+    color: var(--primary-blue);
+    font-size: 14px;
+  }
+
+  @media (max-width: 576px) {
+    .dms-notification-list {
+      width: 75vw;
+      /* Adjusts width based on screen */
+      max-width: 75vw;
+      top: 50px;
+      font-size: 14px;
+      overflow-y: auto;
+      /* Enables scrolling for many notifications */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      /* Ensure shadow */
+      left: 50%;
+      /* Center it horizontally */
+      transform: translateX(-50%);
+      /* Corrects the position to truly center */
+    }
+
+    .dms-notification-list ul {
+      padding: 5px;
+    }
+
+    .dms-notification-list ul li {
+      flex-direction: row;
+      align-items: center;
+      padding: 8px;
+      word-wrap: break-word;
+      white-space: normal;
+      /* Ensures text wraps properly */
+    }
+
+    .dms-notification-list ul li div {
+      font-size: 14px;
+    }
+
+    .dms-notification-list .btn-link {
+      font-size: 14px;
+    }
+  }
+  /* Notification */
 
 /* Sidebar */
 .bg-color {
@@ -630,17 +703,20 @@ hr {
 
 /* Responsive Sidebar */
 @media (max-width: 768px) {
-  .dms-main-content {
-    margin-left: 120px;
-    /* Reset margin for mobile */
-  }
-
   .dms-main-content.sidebar-closed {
     margin-left: 0;
     /* Sidebar completely disappears */
   }
-}
 
+  /* Keep main content fixed */
+  .dms-main-content {
+    margin-left: 0 !important;
+    width: 100%;
+    /* Ensure full width */
+    transition: none;
+    /* No shifting effect */
+  }
+}
 /* Admin Layout Css */
 
 /* Dashboard cards */

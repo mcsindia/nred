@@ -188,15 +188,10 @@ export const UserAdd = () => {
               </Form.Select>
             </Form.Group>
 
-            {/* Buttons */}
-            <div className="d-flex">
-              <Button type="submit" variant="primary" className="me-2">
-                Save Changes
-              </Button>
-              <Button variant="secondary" onClick={() => navigate('/user')}>
-                Cancel
-              </Button>
-            </div>
+            <Button type="submit">Save Changes</Button>
+            <Button type="cancel" className="ms-2" onClick={() => navigate('/user')}>
+              Cancel
+            </Button>
           </Form>
         </div>
       </div>
