@@ -8,8 +8,8 @@ export const AdminDashboard = () => {
     { title: 'Projects Approved', count: 5, color: '#117554' }, 
     { title: 'Projects Rejected', count: 2, color: '#D84040' },  
     { title: 'Projects Pending', count: 3, color: '#ffcc00' },  
-    { title: 'Payment Received', count: '₹8', color: '#FC5C9C' },  
-    { title: 'Payment Pending', count: '₹2', color: '#AD49E1' },  
+    { title: 'Payment Received', count: '₹85632', color: '#FC5C9C' },  
+    { title: 'Payment Pending', count: '₹23458', color: '#AD49E1' },  
   ];
 
   return (
