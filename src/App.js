@@ -33,6 +33,10 @@ import { ProjectRegistrationView } from './pages/dms/Developers/ProjectRegistrat
 import { LoaForm } from './pages/dms/Developers/LoaForm/LoaForm';
 /* Web */
 import { Home } from './pages/web/Home/Home';
+import { SectionList } from './pages/dms/Admin/User/Section/SectionList';
+import { SectionAdd } from './pages/dms/Admin/User/Section/SectionAdd';
+import { SectionEdit } from './pages/dms/Admin/User/Section/SectionEdit';
+import { DeveloperProfile } from './pages/dms/Developers/DeveloperProfile/DeveloperProfile';
 
 function App() {
   return (
@@ -55,6 +59,8 @@ function App() {
         <Route path='/developer-login/forget-password' element={<ForgetPasswordForm />} />
         <Route path='/developer-login/reset-password' element={<ResetPasswordForm />} />
         <Route path='/registration/view' element={<ProjectRegistrationView />} />
+        {/* Developer Profile */}
+        <Route path='/developer-profile' element={<DeveloperProfile/>} />
         {/* Admin */}
         <Route path='/admin-dashboard' element={<AdminDashboard />} />
         {/* Admin Authentication */}
@@ -63,6 +69,10 @@ function App() {
         <Route path='/department' element={<DepartmentList />} />
         <Route path='/department/add' element={<DepartmentAdd />} />
         <Route path='/department/edit' element={<DepartmentEdit />} />
+        {/* Section */}
+        <Route path='/section' element={<SectionList/>} />
+        <Route path='/section/add' element={<SectionAdd/>} />
+        <Route path='/section/edit' element={<SectionEdit/>} />
         {/* Designation */}
         <Route path='/designation' element={<DesignationList />} />
         <Route path='/designation/add' element={<DesignationAdd />} />

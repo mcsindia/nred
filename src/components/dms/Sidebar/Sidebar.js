@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaMotorcycle, FaCaretRight, FaCaretDown, FaTachometerAlt, FaUsers, FaProjectDiagram } from "react-icons/fa";
+import { FaMotorcycle, FaCaretRight, FaCaretDown, FaTachometerAlt, FaUsers, FaProjectDiagram, FaUser } from "react-icons/fa";
 
 export const Sidebar = ({ isOpen }) => {
   const [userType, setUserType] = useState(null);
@@ -68,6 +68,12 @@ export const Sidebar = ({ isOpen }) => {
                 </ul>
               )}
             </li>
+            <li className="dms-nav-item">
+                    <a href="/developer-profile" className="dms-nav-link text-white d-flex align-items-center">
+                      <FaUser className="me-2" />
+                      <span>Profile</span>
+                    </a>
+                  </li>
           </>
         )}
 
