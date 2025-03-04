@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Form, Button, Row, Col, Card, Table } from "react-bootstrap";
+import { Tabs, Tab, Form, Button, Row, Col, Card, Table, Modal} from "react-bootstrap";
 import { FaEye, FaFilePdf } from "react-icons/fa";
 import { AdminLayout } from "../../../../layouts/dms/AdminLayout/AdminLayout";
 
@@ -11,6 +11,7 @@ export const ProjectRegistration = () => {
     const [businessNature, setBusinessNature] = useState(""); // Tracks selected business nature
     const [uploadedFiles, setUploadedFiles] = useState({});
     const [locations, setLocations] = useState([{ latitude: "", longitude: "" }]);
+    const [showModal, setShowModal] = useState(false);
 
     const handleAddLocation = () => {
         setLocations([...locations, { latitude: "", longitude: "" }]);
@@ -1201,14 +1202,32 @@ export const ProjectRegistration = () => {
                                     <Button
                                         variant="success"
                                         className="ml-auto"
-                                        onClick={() => {
-                                            alert(
-                                                "Your Application details have been submitted successfully.\n\nApplication Number is NRED101/2024"
-                                            );
-                                        }}
+                                        onClick={() => setShowModal(true)}
                                     >
                                         Submit
                                     </Button>
+
+                                    {/* Success Modal */}
+                                    <Modal
+                                        show={showModal}
+                                        onHide={() => setShowModal(false)}
+                                        centered
+                                    >
+                                        <Modal.Header closeButton>
+                                            <Modal.Title>Application Submitted</Modal.Title>
+                                        </Modal.Header>
+                                        <Modal.Body>
+                                            Your Application details have been submitted successfully.
+                                            <br />
+                                            <br />
+                                            <strong>Application Number: NRED101/2024</strong>
+                                        </Modal.Body>
+                                        <Modal.Footer>
+                                            <Button variant="primary" onClick={() => setShowModal(false)}>
+                                                OK
+                                            </Button>
+                                        </Modal.Footer>
+                                    </Modal>
                                 </div>
                             </Tab>
                         </Tabs>

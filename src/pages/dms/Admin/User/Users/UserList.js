@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import { Button, Table, InputGroup, Form, Pagination, Dropdown, DropdownButton } from 'react-bootstrap';
 import { FaEdit, FaTrash, FaEye, FaFileExport, FaPlus, FaFileExcel, FaFilePdf } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { AdminLayout } from '../../../layouts/dms/AdminLayout/AdminLayout';
+import { AdminLayout } from '../../../../../layouts/dms/AdminLayout/AdminLayout';
 
 export const UserList = () => {
   const navigate = useNavigate();
 
-  // Initial User Data with new fields
+  // Updated User Data
   const initialUsers = [
-    { id: 1, username: 'John Doe', designation: 'Manager', email: 'john@example.com', mobile: '9876543210', user_role: 'Admin', last_modified_by: 'Admin' },
-    { id: 2, username: 'Jane Smith', designation: 'Developer', email: 'jane@example.com', mobile: '9123456789', user_role: 'Employee', last_modified_by: 'HR' },
-    { id: 3, username: 'Alice Wonder', designation: 'Designer', email: 'alice@example.com', mobile: '8765432109', user_role: 'Vendor', last_modified_by: 'Admin' },
-    { id: 4, username: 'Bob Builder', designation: 'Supervisor', email: 'bob@example.com', mobile: '9638527410', user_role: 'Client', last_modified_by: 'Admin' },
+    { id: 1, username: 'Manu Shrivastava', designation: 'Commissioner', email: 'manu@example.com', mobile: '9876543210', user_role: 'Commissioner', last_modified_by: 'Admin' },
+    { id: 2, username: 'Aman Singh', designation: 'Deputy Commissioner', email: 'aman@example.com', mobile: '9123456789', user_role: 'Additional Commissioner', last_modified_by: 'HR' },
+    { id: 3, username: 'Avaneesh Shukla', designation: 'Executive Engineer', email: 'avaneesh@example.com', mobile: '8765432109', user_role: 'Section Head', last_modified_by: 'Admin' },
   ];
 
   const [users, setUsers] = useState(initialUsers);
@@ -78,9 +77,9 @@ export const UserList = () => {
         <div className="d-flex justify-content-between mb-3">
           <DropdownButton variant="primary" title="Filter" id="filter-dropdown">
             <Dropdown.Item onClick={() => setFilter('')}>All</Dropdown.Item>
-            <Dropdown.Item onClick={() => setFilter('Employee')}>Employee</Dropdown.Item>
-            <Dropdown.Item onClick={() => setFilter('Vendor')}>Vendor</Dropdown.Item>
-            <Dropdown.Item onClick={() => setFilter('Client')}>Client</Dropdown.Item>
+            <Dropdown.Item onClick={() => setFilter('Commissioner')}>Commissioner</Dropdown.Item>
+            <Dropdown.Item onClick={() => setFilter('Additional Commissioner')}>Additional Commissioner</Dropdown.Item>
+            <Dropdown.Item onClick={() => setFilter('Section Head')}>Section Head</Dropdown.Item>
             <Dropdown.Item className='text-custom-danger' onClick={() => setFilter('')}>Cancel</Dropdown.Item>
           </DropdownButton>
 

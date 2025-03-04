@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FaMotorcycle, FaTools, FaTachometerAlt, FaClipboardList, FaUsers, FaProjectDiagram } from "react-icons/fa";
+import { FaMotorcycle, FaCaretRight, FaCaretDown, FaTachometerAlt, FaUsers, FaProjectDiagram } from "react-icons/fa";
 
 export const Sidebar = ({ isOpen }) => {
   const [userType, setUserType] = useState(null);
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const handleMenuToggle = (menuName) => {
+    setOpenMenu((prev) => (prev === menuName ? null : menuName));
+  };
 
   useEffect(() => {
     const storedUserType = localStorage.getItem("userType");
@@ -32,10 +37,36 @@ export const Sidebar = ({ isOpen }) => {
               </a>
             </li>
             <li className="dms-nav-item">
-              <a href="/project-registration" className="dms-nav-link text-white d-flex align-items-center">
-                <FaClipboardList className="me-2" />
-                <span>Project Registration</span>
-              </a>
+              <div
+                className={`dms-nav-link text-white ${openMenu === "project" ? "active" : ""}`}
+                onClick={() => handleMenuToggle("project")}
+              >
+                <div className="d-flex align-items-center">
+                  <FaProjectDiagram className="me-2" />
+                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Project Registration</span>
+                </div>
+                <FaCaretDown
+                  className={`ms-auto ${openMenu === "project" ? "rotate" : ""} ${isOpen ? "hide-caret" : ""
+                    }`}
+                  style={{ transition: "transform 0.3s", display: isOpen ? "inline-block" : "none" }}
+                />
+              </div>
+              {openMenu === "project" && (
+                <ul className="submenu show">
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/project-registration/add" className="dms-nav-link text-white">Apply For Project</a>
+                    </div>
+                  </li>
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/project-registration" className="dms-nav-link text-white">View Project Registration</a>
+                    </div>
+                  </li>
+                </ul>
+              )}
             </li>
           </>
         )}
@@ -48,11 +79,50 @@ export const Sidebar = ({ isOpen }) => {
                 <span> Dashboard</span>
               </a>
             </li>
+
             <li className="dms-nav-item">
-              <a href="/user" className="dms-nav-link text-white d-flex align-items-center">
-                <FaUsers className="me-2" />
-                <span>User</span>
-              </a>
+              <div
+                className={`dms-nav-link text-white ${openMenu === "user" ? "active" : ""}`}
+                onClick={() => handleMenuToggle("user")}
+              >
+                <div className="d-flex align-items-center">
+                  <FaUsers className="me-2" />
+                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>User</span>
+                </div>
+                <FaCaretDown
+                  className={`ms-auto ${openMenu === "user" ? "rotate" : ""} ${isOpen ? "hide-caret" : ""
+                    }`}
+                  style={{ transition: "transform 0.3s", display: isOpen ? "inline-block" : "none" }}
+                />
+              </div>
+              {openMenu === "user" && (
+                <ul className="submenu show">
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/department" className="dms-nav-link text-white">Department</a>
+                    </div>
+                  </li>
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/section" className="dms-nav-link text-white">Section</a>
+                    </div>
+                  </li>
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/designation" className="dms-nav-link text-white">Designation</a>
+                    </div>
+                  </li>
+                  <li className="dms-nav-item">
+                    <div className="d-flex align-items-center">
+                      <FaCaretRight />
+                      <a href="/user" className="dms-nav-link text-white">User</a>
+                    </div>
+                  </li>
+                </ul>
+              )}
             </li>
           </>
         )}

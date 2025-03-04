@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { AdminLayout } from '../../../../layouts/dms/AdminLayout/AdminLayout';
 
 export const DeveloperDashboard = () => {

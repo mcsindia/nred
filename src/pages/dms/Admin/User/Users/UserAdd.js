@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { AdminLayout } from '../../../layouts/dms/AdminLayout/AdminLayout';
+import { AdminLayout } from '../../../../../layouts/dms/AdminLayout/AdminLayout';
 
 export const UserAdd = () => {
   const navigate = useNavigate();
@@ -45,8 +45,8 @@ export const UserAdd = () => {
     e.preventDefault();
 
     // Form Validation
-    if (!formData.username || !formData.email || !formData.mobile || !formData.role_id) {
-      setError('Name, Email, Mobile, and User Role are required fields.');
+    if (!formData.username || !formData.email || !formData.mobile || !formData.role_id || !formData.designation) {
+      setError('Name, Email, Mobile, User Role, and Designation are required fields.');
       return;
     }
 
@@ -92,21 +92,25 @@ export const UserAdd = () => {
                 required
               >
                 <option value="">Select Section</option>
-                <option value="Employee">Bio Mass</option>
-                <option value="Vendor">Solar</option>
+                <option value="Bio Mass">Bio Mass</option>
+                <option value="Solar">Solar</option>
               </Form.Select>
             </Form.Group>
 
-            {/* Designation */}
+            {/* Designation (Dropdown) */}
             <Form.Group className="dms-form-group">
               <Form.Label>Designation</Form.Label>
-              <Form.Control
-                type="text"
+              <Form.Select
                 name="designation"
-                placeholder="Enter designation"
                 value={formData.designation}
                 onChange={handleChange}
-              />
+                required
+              >
+                <option value="">Select Designation</option>
+                <option value="Commissioner">Commissioner</option>
+                <option value="Deputy Commissioner">Deputy Commissioner</option>
+                <option value="Executive Engineer">Executive Engineer</option>
+              </Form.Select>
             </Form.Group>
 
             {/* Email */}
@@ -145,9 +149,9 @@ export const UserAdd = () => {
                 required
               >
                 <option value="">Select Role</option>
-                <option value="Employee">Employee</option>
-                <option value="Vendor">Vendor</option>
-                <option value="Client">Client</option>
+                <option value="Commissioner">Commissioner</option>
+                <option value="Additional Commissioner">Additional Commissioner</option>
+                <option value="Section Head">Section Head</option>
               </Form.Select>
             </Form.Group>
 

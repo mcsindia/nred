@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { Card, Button, Container, Row, Col, Image } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import logo from "../../../assets/images/logo.png"; 
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -13,13 +14,17 @@ export const Home = () => {
   return (
     <div className="home-container">
       <div className="home-overlay"></div>
-      <Container className="d-flex justify-content-center align-items-center min-vh-100">
+      <Container className="d-flex flex-column justify-content-center align-items-center min-vh-100">
+        {/* Logo Section (Ensures visibility) */}
+        <Image src={logo} alt="Logo" className="home-logo" />
+
+        {/* Cards Section */}
         <Row className="justify-content-center g-4">
           <Col xs={12} sm={8} md={6} lg={4} className="d-flex justify-content-center">
             <Card className="text-center shadow-lg home-card">
               <Card.Body>
                 <Card.Title>Developer Login</Card.Title>
-                <Card.Text>Access the developer dashboard to manage and deploy projects.</Card.Text>
+                <Card.Text>Access the developer dashboard to manage and register projects.</Card.Text>
                 <Button
                   variant="primary"
                   onClick={() => handleLogin("developer", "/developer-login")}
@@ -32,8 +37,8 @@ export const Home = () => {
           <Col xs={12} sm={8} md={6} lg={4} className="d-flex justify-content-center">
             <Card className="text-center shadow-lg home-card">
               <Card.Body>
-                <Card.Title>Admin Login</Card.Title>
-                <Card.Text>Manage users, settings, and website functionalities from the admin panel.</Card.Text>
+                <Card.Title>Departmental Login</Card.Title>
+                <Card.Text>Manage departmental users, developers, and project registration.</Card.Text>
                 <Button
                   variant="danger"
                   onClick={() => handleLogin("admin", "/admin-login")}

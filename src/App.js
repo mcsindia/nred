@@ -4,9 +4,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 /* My Profile */
 import { Profile } from './pages/dms/Profile/Profile';
 /* User Management */
-import { UserAdd } from './pages/dms/Users/UserAdd';
-import { UserEdit } from './pages/dms/Users/UserEdit';
-import { UserList } from './pages/dms/Users/UserList';
+import { UserAdd } from './pages/dms/Admin/User/Users/UserAdd';
+import { UserEdit } from './pages/dms/Admin/User/Users/UserEdit';
+import { UserList } from './pages/dms/Admin/User/Users/UserList';
+/* Department */
+import { DepartmentList } from './pages/dms/Admin/User/Department/DepartmentList';
+import { DepartmentAdd } from './pages/dms/Admin/User/Department/DepartmentAdd';
+import { DepartmentEdit } from './pages/dms/Admin/User/Department/DepartmentEdit';
+/* Designation */
+import { DesignationList } from './pages/dms/Admin/User/Designation/DesignationList';
+import { DesignationEdit } from './pages/dms/Admin/User/Designation/DesignationEdit';
+import { DesignationAdd } from './pages/dms/Admin/User/Designation/DesignationAdd';
 /* Dashboard */
 import { DeveloperDashboard } from './pages/dms/Developers/Dashboard/DeveloperDashboard';
 import { AdminDashboard } from './pages/dms/Admin/Dashboard/AdminDashboard';
@@ -31,30 +39,38 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Dashboard */}
-        <Route path='/' element={ <Home/>} />
+        <Route path='/' element={<Home />} />
         {/* Profile Page */}
         <Route path='/profile' element={<Profile />} />
         {/* Developers */}
         {/* Developers Dashboard */}
         <Route path='/developer-dashboard' element={<DeveloperDashboard />} />
         {/* Developers Project Registration */}
-        <Route path='/project-registration' element={<ProjectRegistrationList/>}/>
+        <Route path='/project-registration' element={<ProjectRegistrationList />} />
         <Route path='/project-registration/add' element={<ProjectRegistration />} />
-        <Route path='/loa-form' element={<LoaForm/>} />
+        <Route path='/loa-form' element={<LoaForm />} />
         {/* Developers Authentication Pages */}
         <Route path='/developer-login' element={<EnterMobile />} />
         <Route path='enter-otp' element={<EnterOTP />} />
         <Route path='/developer-login/forget-password' element={<ForgetPasswordForm />} />
         <Route path='/developer-login/reset-password' element={<ResetPasswordForm />} />
-       <Route path='/registration/view' element={<ProjectRegistrationView/>}/>
+        <Route path='/registration/view' element={<ProjectRegistrationView />} />
         {/* Admin */}
         <Route path='/admin-dashboard' element={<AdminDashboard />} />
         {/* Admin Authentication */}
         <Route path='/admin-login' element={<AdminLogin />} />
+        {/* Department */}
+        <Route path='/department' element={<DepartmentList />} />
+        <Route path='/department/add' element={<DepartmentAdd />} />
+        <Route path='/department/edit' element={<DepartmentEdit />} />
+        {/* Designation */}
+        <Route path='/designation' element={<DesignationList />} />
+        <Route path='/designation/add' element={<DesignationAdd />} />
+        <Route path='/designation/edit' element={<DesignationEdit />} />
         {/* User */}
         <Route path='/user' element={<UserList />} />
         <Route path='/user/add' element={<UserAdd />} />
-        <Route path='/user/edit' element={<UserEdit />} />    
+        <Route path='/user/edit' element={<UserEdit />} />
       </Routes>
     </BrowserRouter>
   );

@@ -14,7 +14,7 @@ export const ProjectRegistrationList = () => {
     { id: 3, name: 'Rewa Solar Plant', dateApplied: '2025-01-14', paymentStatus: 'Paid', registrationStatus: 'Completed' },
   ];
 
-  const [projects, setProjects] = useState(initialProjects);
+  const [projects] = useState(initialProjects);
   const [search, setSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -103,6 +103,7 @@ export const ProjectRegistrationList = () => {
                 <th>Project Name</th>
                 <th>Date Applied</th>
                 <th>Payment Status</th>
+                <th>LOA</th>
                 <th>Registration Status</th>
                 <th>Actions</th>
               </tr>
@@ -120,17 +121,23 @@ export const ProjectRegistrationList = () => {
                       ) : project.paymentStatus === 'under review' ? (
                         <span>Under Review</span>
                       ) : project.paymentStatus === 'Paid' ? (
-                        <span>
-                          Paid
+                        <span>Paid</span>
+                      ) : null}
+                    </td>
+                    <td>
+                      {project.paymentStatus === 'Paid' ? (
+                        <>
+                          Generated
                           <FaDownload
                             className="icon-black ms-2"
                             onClick={() => navigate('/loa-form', { state: { project } })}
                             title="Download LOA Form"
                           />
-                        </span>
-                      ) : null}
+                        </>
+                      ) : (
+                        'Not Generated'
+                      )}
                     </td>
-
                     <td>{project.registrationStatus}</td>
                     <td>
                       <FaEye className="icon-blue me-2" onClick={() => handleView(project)} />
@@ -139,11 +146,31 @@ export const ProjectRegistrationList = () => {
                   </tr>
                 ))
               ) : (
-                <tr><td colSpan="6" className="text-center">No projects found.</td></tr>
+                <tr><td colSpan="7" className="text-center">No projects found.</td></tr>
               )}
             </tbody>
           </Table>
         </div>
+           {/* Pagination */}
+                <Pagination className="justify-content-center">
+                  <Pagination.Prev
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                  />
+                  {[...Array(totalPages)].map((_, index) => (
+                    <Pagination.Item
+                      key={index + 1}
+                      active={index + 1 === currentPage}
+                      onClick={() => handlePageChange(index + 1)}
+                    >
+                      {index + 1}
+                    </Pagination.Item>
+                  ))}
+                  <Pagination.Next
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                  />
+                </Pagination>
       </div>
     </AdminLayout>
   );
