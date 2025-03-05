@@ -1206,8 +1206,8 @@ br {
   font-weight: 600 !important;
 }
 
-.form-label{
-  font-weight: 700 !important;
+.field-title {
+  font-weight: bold ;
 }
 
 /* My profile page css */

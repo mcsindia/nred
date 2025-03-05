@@ -4,7 +4,7 @@ import { Table, InputGroup, Form, Pagination, Dropdown, DropdownButton } from 'r
 import { FaEye, FaUser, FaFileExport, FaFileExcel, FaFilePdf } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-export const RegistrationView = () => {
+export const ProjectRegistration = () => {
   const navigate = useNavigate();
 
   // Initial Registration Data

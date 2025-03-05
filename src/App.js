@@ -25,6 +25,9 @@ import { DesignationAdd } from './pages/dms/Departmental/UserManagement/Designat
 import { SectionList } from './pages/dms/Departmental/UserManagement/Section/SectionList';
 import { SectionAdd } from './pages/dms/Departmental/UserManagement/Section/SectionAdd';
 import { SectionEdit } from './pages/dms/Departmental/UserManagement/Section/SectionEdit';
+/* Depatmental Project Registration */
+import { ProjectRegistration } from './pages/dms/Departmental/ProjectRegistration/ProjectRegistration';
+
 /* Deveoper Panel */
 /* Authentication */
 import { EnterMobile } from './pages/dms/Developers/Authentication/EnterMobile/EnterMobile';
@@ -34,7 +37,7 @@ import { ResetPasswordForm } from './pages/dms/Developers/Authentication/ResetPa
 /* Dashboard */
 import { DeveloperDashboard } from './pages/dms/Developers/Dashboard/DeveloperDashboard';
 /* Project Registration */
-import { ProjectRegistration } from './pages/dms/Developers/ProjectRegistration/ProjectRegistration';
+import { ProjectRegistrationAdd } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationAdd';
 import { ProjectRegistrationList } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationList';
 import { ProjectRegistrationView } from './pages/dms/Developers/ProjectRegistration/ProjectRegistrationView';
 /* Developer Profile */
@@ -43,7 +46,6 @@ import { DeveloperProfile } from './pages/dms/Developers/DeveloperProfile/Develo
 import { LoaForm } from './pages/dms/Developers/LoaForm/LoaForm';
 /* Web */
 import { Home } from './pages/web/Home/Home';
-/* import { RegistrationView } from './pages/dms/Departmental/RegistrationView/RegistrationView'; */
 
 function App() {
   return (
@@ -63,7 +65,7 @@ function App() {
         <Route path='/developer-dashboard' element={<DeveloperDashboard />} />
         {/* Developers Project Registration */}
         <Route path='/project-registration' element={<ProjectRegistrationList />} />
-        <Route path='/project-registration/add' element={<ProjectRegistration />} />
+        <Route path='/project-registration/add' element={<ProjectRegistrationAdd />} />
         <Route path='/registration/view' element={<ProjectRegistrationView />} />
         {/* LOA */}
         <Route path='/loa-form' element={<LoaForm />} />
@@ -91,8 +93,8 @@ function App() {
         <Route path='/user' element={<UserList />} />
         <Route path='/user/add' element={<UserAdd />} />
         <Route path='/user/edit' element={<UserEdit />} />
-        {/* Registration View */}{/* 
-        <Route path='/registration-view' element={<RegistrationView/>} /> */}
+        {/* Departmental Project Registration */}
+        <Route path='/departmental/project-registration' element={<ProjectRegistration/>} /> 
       </Routes>
     </BrowserRouter>
   );

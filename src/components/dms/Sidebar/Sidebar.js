@@ -130,12 +130,12 @@ export const Sidebar = ({ isOpen }) => {
                 </ul>
               )}
             </li>
-           {/*  <li className="dms-nav-item">
-              <a href="/registration-view" className="dms-nav-link text-white d-flex align-items-center">
-                <FaTachometerAlt className="me-2" />
-                <span> Registration View</span>
+             <li className="dms-nav-item">
+              <a href="/departmental/project-registration" className="dms-nav-link text-white d-flex align-items-center">
+                <FaProjectDiagram className="me-2" />
+                <span>Project Registration</span>
               </a>
-            </li> */}
+            </li> 
           </>
         )}
       </ul>

@@ -3,7 +3,7 @@ import { Tabs, Tab, Form, Button, Row, Col, Card, Table, Modal} from "react-boot
 import { FaEye, FaFilePdf } from "react-icons/fa";
 import { AdminLayout } from "../../../../layouts/dms/AdminLayout/AdminLayout";
 
-export const ProjectRegistration = () => {
+export const ProjectRegistrationAdd = () => {
     const [activeTab, setActiveTab] = useState("individualOrCompany");
     const tabKeys = ["individualOrCompany", "projectDetails", "powerEvacuation", "documents"];
     const [formType, setFormType] = useState("individual"); // 'individual' or 'company'
@@ -97,13 +97,13 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="panNumber">
-                                                        <Form.Label>PAN No.*</Form.Label>
+                                                        <Form.Label className="field-title">PAN No.*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter PAN Number" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="name">
-                                                        <Form.Label>Name*</Form.Label>
+                                                        <Form.Label className="field-title">Name*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Name" required />
                                                     </Form.Group>
                                                 </Col>
@@ -111,13 +111,13 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="dob">
-                                                        <Form.Label>Date of Birth*</Form.Label>
+                                                        <Form.Label className="field-title">Date of Birth*</Form.Label>
                                                         <Form.Control type="date" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="fatherName">
-                                                        <Form.Label>Father's Name*</Form.Label>
+                                                        <Form.Label className="field-title">Father's Name*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Father's Name" required />
                                                     </Form.Group>
                                                 </Col>
@@ -125,20 +125,20 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="state">
-                                                        <Form.Label>State*</Form.Label>
+                                                        <Form.Label className="field-title">State*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter State" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="district">
-                                                        <Form.Label>District*</Form.Label>
+                                                        <Form.Label className="field-title">District*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter District" required />
                                                     </Form.Group>
                                                 </Col>
                                             </Row>
                                             <Form.Group controlId="experience">
                                                 <h5 className="form-headings">Experience Details</h5>
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Whether the Applicant has prior Experience in Renewable Energy or
                                                     Energy Storage Projects*
                                                 </Form.Label>
@@ -148,14 +148,14 @@ export const ProjectRegistration = () => {
                                                 </div>
                                             </Form.Group>
                                             <Form.Group controlId="sectorType" className="mt-3">
-                                                <Form.Label>if yes then choose sector*</Form.Label>
+                                                <Form.Label className="field-title">if yes then choose sector*</Form.Label>
                                                 <Form.Control as="select">
                                                     <option>Select sector</option>
                                                     <option>Renewable Energy</option>
                                                 </Form.Control>
                                             </Form.Group>
                                             <Form.Group controlId="blacklist" className="mt-3">
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Whether the Applicant or any of its promoters / Directors / Associates
                                                     are blacklisted by any central Government or State Government /
                                                     Department / Agency in India*
@@ -175,13 +175,13 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="gstin">
-                                                        <Form.Label>GSTIN No.*</Form.Label>
+                                                        <Form.Label className="field-title">GSTIN No.*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter GSTIN Number" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="companyName">
-                                                        <Form.Label>Company / Firm Name*</Form.Label>
+                                                        <Form.Label className="field-title">Company / Firm Name*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Company Name" required />
                                                     </Form.Group>
                                                 </Col>
@@ -189,7 +189,7 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="entityType">
-                                                        <Form.Label>Type of Entity*</Form.Label>
+                                                        <Form.Label className="field-title">Type of Entity*</Form.Label>
                                                         <Form.Control as="select" onChange={(e) => setEntityType(e.target.value)}>
                                                             <option>Select Type of Entity</option>
                                                             <option>Private Limited</option>
@@ -200,7 +200,7 @@ export const ProjectRegistration = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="customEntityType">
-                                                        <Form.Label>Enter Type of Entity (If Type of Entity Others)</Form.Label>
+                                                        <Form.Label className="field-title">Enter Type of Entity (If Type of Entity Others)</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Type of Entity" required />
                                                     </Form.Group>
                                                 </Col>
@@ -208,7 +208,7 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="businessNature">
-                                                        <Form.Label>Nature of Business*</Form.Label>
+                                                        <Form.Label className="field-title">Nature of Business*</Form.Label>
                                                         <Form.Control as="select" onChange={(e) => setBusinessNature(e.target.value)}>
                                                             <option>Select Nature of Business</option>
                                                             <option>Renewable Energy</option>
@@ -220,7 +220,7 @@ export const ProjectRegistration = () => {
 
                                                 <Col md={6}>
                                                     <Form.Group controlId="custombusinessType">
-                                                        <Form.Label>Enter Type of Business (If Type of Business Nature Others)</Form.Label>
+                                                        <Form.Label className="field-title">Enter Type of Business (If Type of Business Nature Others)</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Type of Entity" required />
                                                     </Form.Group>
                                                 </Col>
@@ -229,7 +229,7 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="ceoName">
-                                                        <Form.Label>Name of CEO / Managing Director</Form.Label>
+                                                        <Form.Label className="field-title">Name of CEO / Managing Director</Form.Label>
                                                         <Form.Control
                                                             type="text"
                                                             placeholder="Enter Name of CEO / Managing Director"
@@ -238,7 +238,7 @@ export const ProjectRegistration = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="isGovernmentEntity">
-                                                        <Form.Label>
+                                                        <Form.Label className="field-title">
                                                             Whether Application Firm is a Government Entity*
                                                         </Form.Label>
                                                         <div className=" yes-no-checkbox">
@@ -253,13 +253,13 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="registeredAddress">
-                                                        <Form.Label>Registered Address*</Form.Label>
+                                                        <Form.Label className="field-title">Registered Address*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Registered Address" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="companyWebsite">
-                                                        <Form.Label>Company Website</Form.Label>
+                                                        <Form.Label className="field-title">Company Website</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Company Website" />
                                                     </Form.Group>
                                                 </Col>
@@ -269,13 +269,13 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="name">
-                                                        <Form.Label>Name*</Form.Label>
+                                                        <Form.Label className="field-title">Name*</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Name" required />
                                                     </Form.Group>
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="designation">
-                                                        <Form.Label>Designation</Form.Label>
+                                                        <Form.Label className="field-title">Designation</Form.Label>
                                                         <Form.Control type="text" placeholder="Enter Designation" />
                                                     </Form.Group>
                                                 </Col>
@@ -285,7 +285,7 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="name">
-                                                        <Form.Label>State</Form.Label>
+                                                        <Form.Label className="field-title">State</Form.Label>
                                                         <Form.Control as="select">
                                                             <option>Select State</option>
                                                             <option>Madhya Pradesh</option>
@@ -294,7 +294,7 @@ export const ProjectRegistration = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group controlId="designation">
-                                                        <Form.Label>District</Form.Label>
+                                                        <Form.Label className="field-title">District</Form.Label>
                                                         <Form.Control as="select">
                                                             <option>Select your district</option>
                                                             <option>Agar Malwa</option>
@@ -356,7 +356,7 @@ export const ProjectRegistration = () => {
 
                                             <Form.Group controlId="experience">
                                                 <h5 className="form-headings">Experience Details</h5>
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Whether the Applicant has prior Experience in Renewable Energy or
                                                     Energy Storage Projects*
                                                 </Form.Label>
@@ -367,7 +367,7 @@ export const ProjectRegistration = () => {
                                             </Form.Group>
 
                                             <Form.Group controlId="sectorType" className="mt-3">
-                                                <Form.Label>if yes then choose sector*</Form.Label>
+                                                <Form.Label className="field-title">if yes then choose sector*</Form.Label>
                                                 <Form.Control as="select">
                                                     <option>Select sector</option>
                                                     <option>Renewable Energy</option>
@@ -375,7 +375,7 @@ export const ProjectRegistration = () => {
                                             </Form.Group>
 
                                             <Form.Group controlId="blacklist" className="mt-3">
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Whether the Applicant or any of its promoters / Directors / Associates
                                                     are blacklisted by any central Government or State Government /
                                                     Department / Agency in India*
@@ -404,13 +404,13 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="projectName">
-                                                <Form.Label>Name of Project to be registered*</Form.Label>
+                                                <Form.Label className="field-title">Name of Project to be registered*</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Project Name" required />
                                             </Form.Group>
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="projectCompany">
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Name of Project Company* <br />
                                                     <span className="project-form-span">
                                                         (Project Company / SPV / Entity that will undertake development and / or operations of the project)
@@ -425,7 +425,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="projectType">
-                                                <Form.Label>Type of Project*</Form.Label>
+                                                <Form.Label className="field-title">Type of Project*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Wind</option>
                                                     <option>Solar</option>
@@ -436,7 +436,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="customProjectType">
-                                                <Form.Label>Enter Type of Project
+                                                <Form.Label className="field-title">Enter Type of Project
                                                     <br />
                                                     <span className=" project-form-span">(If Type of Project selected in Others)</span>
                                                 </Form.Label>
@@ -449,7 +449,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="projectCapacity">
-                                                <Form.Label>Project Capacity*
+                                                <Form.Label className="field-title">Project Capacity*
                                                     <br />
                                                     <span className="project-form-span">
                                                         (If Project is RE plus energy storage based. Enter energy Storage capacity in KWH or MWH as applicable)
@@ -461,7 +461,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="energyStorageCapacity">
-                                                <Form.Label>Energy Storage Capacity (KWH or MWH)*</Form.Label>
+                                                <Form.Label className="field-title">Energy Storage Capacity (KWH or MWH)*</Form.Label>
                                                 <Form.Control type="number" placeholder="Enter Energy Storage Capacity" required />
                                             </Form.Group>
                                         </Col>
@@ -469,7 +469,7 @@ export const ProjectRegistration = () => {
 
                                     {/* Brief Description */}
                                     <Form.Group controlId="projectDescription" className="mb-3">
-                                        <Form.Label>Brief Description of the Scheme giving Schematic Layout* (Limit of 250 words)</Form.Label>
+                                        <Form.Label className="field-title">Brief Description of the Scheme giving Schematic Layout* (Limit of 250 words)</Form.Label>
                                         <Form.Control as="textarea" rows={3} placeholder="Enter Project Description" maxLength={250} required />
                                     </Form.Group>
 
@@ -477,13 +477,13 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="annualGeneration">
-                                                <Form.Label>Expected Annual Generation from the Project*</Form.Label>
+                                                <Form.Label className="field-title">Expected Annual Generation from the Project*</Form.Label>
                                                 <Form.Control type="number" placeholder="Enter Expected Generation" required />
                                             </Form.Group>
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="unit">
-                                                <Form.Label>Select Unit</Form.Label>
+                                                <Form.Label className="field-title">Select Unit</Form.Label>
                                                 <Form.Control as="select">
                                                     <option>MW</option>
                                                     <option>KWh</option>
@@ -496,7 +496,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="minAnnualCUF">
-                                                <Form.Label>Minimum Annual CUF  ((In %) <br />
+                                                <Form.Label className="field-title">Minimum Annual CUF  ((In %) <br />
                                                     <span className="project-form-span">
                                                         (For Energy Storage Project, The generation should not be less than 35% CUF))
                                                     </span></Form.Label>
@@ -506,7 +506,7 @@ export const ProjectRegistration = () => {
 
                                         <Col md={6}>
                                             <Form.Group controlId="investment">
-                                                <Form.Label>Approximate Investment in Project*</Form.Label>
+                                                <Form.Label className="field-title">Approximate Investment in Project*</Form.Label>
                                                 <Form.Control type="number" placeholder="Enter Investment" required />
                                             </Form.Group>
                                         </Col>
@@ -517,13 +517,13 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="projectLocation">
-                                                <Form.Label>Location of the Project*</Form.Label>
+                                                <Form.Label className="field-title">Location of the Project*</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Location" required />
                                             </Form.Group>
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="typeOfArea">
-                                                <Form.Label>Type of Area*</Form.Label>
+                                                <Form.Label className="field-title">Type of Area*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Urban</option>
                                                     <option>Rural</option>
@@ -536,7 +536,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="state">
-                                                <Form.Label>State*</Form.Label>
+                                                <Form.Label className="field-title">State*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select State</option>
                                                     <option>Madhya Pradesh</option>
@@ -545,7 +545,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="district">
-                                                <Form.Label>District*</Form.Label>
+                                                <Form.Label className="field-title">District*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select District</option>
                                                     <option>Agar Malwa</option>
@@ -609,7 +609,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="tehsil">
-                                                <Form.Label>Tehsil*</Form.Label>
+                                                <Form.Label className="field-title">Tehsil*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select Tehsil</option>
                                                     <option>Ajaygarh</option>
@@ -671,7 +671,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="village">
-                                                <Form.Label>Village*</Form.Label>
+                                                <Form.Label className="field-title">Village*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select Village</option>
                                                     <option>Adampur</option>
@@ -715,7 +715,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={12}>
                                             <Form.Group controlId="address">
-                                                <Form.Label>Address*</Form.Label>
+                                                <Form.Label className="field-title">Address*</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Address" required />
                                             </Form.Group>
                                         </Col>
@@ -725,19 +725,19 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={4}>
                                             <Form.Group controlId="approachRoad">
-                                                <Form.Label>Approach Road</Form.Label>
+                                                <Form.Label className="field-title">Approach Road</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Approach Road" />
                                             </Form.Group>
                                         </Col>
                                         <Col md={4}>
                                             <Form.Group controlId="nearestRailwayStation">
-                                                <Form.Label>Nearest Railway Station</Form.Label>
+                                                <Form.Label className="field-title">Nearest Railway Station</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Nearest Railway Station" />
                                             </Form.Group>
                                         </Col>
                                         <Col md={4}>
                                             <Form.Group controlId="coordinates">
-                                                <Form.Label>Coordinates of Project Site Location</Form.Label>
+                                                <Form.Label className="field-title">Coordinates of Project Site Location</Form.Label>
                                                 <Form.Control type="text" placeholder="Enter Coordinates" />
                                             </Form.Group>
                                         </Col>
@@ -748,13 +748,13 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="landArea">
-                                                <Form.Label>Land Area for Proposed Capacity*</Form.Label>
+                                                <Form.Label className="field-title">Land Area for Proposed Capacity*</Form.Label>
                                                 <Form.Control type="number" placeholder="Enter Land Area" required />
                                             </Form.Group>
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="landUnit">
-                                                <Form.Label>Select Unit</Form.Label>
+                                                <Form.Label className="field-title">Select Unit</Form.Label>
                                                 <Form.Control as="select">
                                                     <option>Acres</option>
                                                     <option>Hectares</option>
@@ -767,7 +767,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="landOwnership">
-                                                <Form.Label>Whether Land is in name of the Applicant*</Form.Label>
+                                                <Form.Label className="field-title">Whether Land is in name of the Applicant*</Form.Label>
                                                 <div className=" yes-no-checkbox">
                                                     <Form.Check type="radio" label="Yes" name="landOwnership" />
                                                     <Form.Check type="radio" label="No" name="landOwnership" />
@@ -776,7 +776,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="landPurchase">
-                                                <Form.Label>Whether Land is Proposed to be Purchased*</Form.Label>
+                                                <Form.Label className="field-title">Whether Land is Proposed to be Purchased*</Form.Label>
                                                 <div className=" yes-no-checkbox">
                                                     <Form.Check type="radio" label="Yes" name="landPurchase" />
                                                     <Form.Check type="radio" label="No" name="landPurchase" />
@@ -789,7 +789,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="landAgreement">
-                                                <Form.Label>Whether Land Proposed to be utilized in under Agreement*</Form.Label>
+                                                <Form.Label className="field-title">Whether Land Proposed to be utilized in under Agreement*</Form.Label>
                                                 <div className=" yes-no-checkbox">
                                                     <Form.Check type="radio" label="Yes" name="landAgreement" />
                                                     <Form.Check type="radio" label="No" name="landAgreement" />
@@ -798,7 +798,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={6}>
                                             <Form.Group controlId="khasraDistrict">
-                                                <Form.Label>District*</Form.Label>
+                                                <Form.Label className="field-title">District*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select District</option>
                                                     <option>Agar Malwa</option>
@@ -863,7 +863,7 @@ export const ProjectRegistration = () => {
 
                                         <Col md={4}>
                                             <Form.Group controlId="khasraTehsil">
-                                                <Form.Label>Tehsil*</Form.Label>
+                                                <Form.Label className="field-title">Tehsil*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select Tehsil</option>
                                                     <option>Ajaygarh</option>
@@ -925,7 +925,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={4}>
                                             <Form.Group controlId="khasraVillage">
-                                                <Form.Label>Village*</Form.Label>
+                                                <Form.Label className="field-title">Village*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select Village</option>
                                                     <option>Adampur</option>
@@ -965,7 +965,7 @@ export const ProjectRegistration = () => {
                                         </Col>
                                         <Col md={4}>
                                             <Form.Group controlId="khasraNumber">
-                                                <Form.Label>Select Khasra*</Form.Label>
+                                                <Form.Label className="field-title">Select Khasra*</Form.Label>
                                                 <Form.Control as="select" required>
                                                     <option>Select Khasra</option>
                                                 </Form.Control>
@@ -978,7 +978,7 @@ export const ProjectRegistration = () => {
                                             <Row className="mb-3" key={index}>
                                                 <Col md={4}>
                                                     <Form.Group controlId={`latitude-${index}`}>
-                                                        <Form.Label>Latitude*</Form.Label>
+                                                        <Form.Label className="field-title">Latitude*</Form.Label>
                                                         <Form.Control
                                                             type="text"
                                                             placeholder="Enter Latitude"
@@ -988,7 +988,7 @@ export const ProjectRegistration = () => {
                                                 </Col>
                                                 <Col md={4}>
                                                     <Form.Group controlId={`longitude-${index}`}>
-                                                        <Form.Label>Longitude*</Form.Label>
+                                                        <Form.Label className="field-title">Longitude*</Form.Label>
                                                         <Form.Control
                                                             type="text"
                                                             placeholder="Enter Longitude"
@@ -1030,7 +1030,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={12}>
                                             <Form.Group controlId="electricityConnection">
-                                                <Form.Label>Is Electricity Connection Required*</Form.Label>
+                                                <Form.Label className="field-title">Is Electricity Connection Required*</Form.Label>
                                                 <div className=" yes-no-checkbox">
                                                     <Form.Check type="radio" label="Yes" name="landPurchase" />
                                                     <Form.Check type="radio" label="No" name="landPurchase" />
@@ -1044,7 +1044,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="voltageLevel">
-                                                <Form.Label>Voltage Level for Power Evacuation*</Form.Label>
+                                                <Form.Label className="field-title">Voltage Level for Power Evacuation*</Form.Label>
                                                 <Form.Select>
                                                     <option>Select Unit</option>
                                                     <option>Unit 1</option>
@@ -1056,7 +1056,7 @@ export const ProjectRegistration = () => {
 
                                         <Col md={6}>
                                             <Form.Group controlId="connectivityAt">
-                                                <Form.Label>Connectivity at*</Form.Label>
+                                                <Form.Label className="field-title">Connectivity at*</Form.Label>
                                                 <Form.Select>
                                                     <option>Select Connectivity</option>
                                                     <option>Connectivity 1</option>
@@ -1071,7 +1071,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="discom">
-                                                <Form.Label>Select Discom* <br />
+                                                <Form.Label className="field-title">Select Discom* <br />
                                                     <span className="project-form-span">
                                                         (If Project is RE plus Energy Storage Based, Enter Energy Storage Capacity in KWH or MWH as applicable)  </span>
                                                 </Form.Label>
@@ -1086,7 +1086,7 @@ export const ProjectRegistration = () => {
 
                                         <Col md={6}>
                                             <Form.Group controlId="circle">
-                                                <Form.Label>Select Circle* <br />
+                                                <Form.Label className="field-title">Select Circle* <br />
                                                     <span className="project-form-span">
                                                         (Only If connected at Discom Level)</span>
                                                 </Form.Label>
@@ -1104,7 +1104,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="nearestSubstation">
-                                                <Form.Label>Select Nearest Substation*</Form.Label>
+                                                <Form.Label className="field-title">Select Nearest Substation*</Form.Label>
                                                 <Form.Select>
                                                     <option>Select Nearest Substation</option>
                                                     <option>Substation 1</option>
@@ -1116,7 +1116,7 @@ export const ProjectRegistration = () => {
 
                                         <Col md={6}>
                                             <Form.Group controlId="distanceToSubstation">
-                                                <Form.Label>
+                                                <Form.Label className="field-title">
                                                     Distance of Nearest Substation from Project Site* (in KM)
                                                 </Form.Label>
                                                 <Form.Control type="number" placeholder="Enter Distance" />
@@ -1128,7 +1128,7 @@ export const ProjectRegistration = () => {
                                     <Row className="mb-3">
                                         <Col md={12}>
                                             <Form.Group controlId="powerUtilization">
-                                                <Form.Label>Utilization of Power Generated</Form.Label>
+                                                <Form.Label className="field-title">Utilization of Power Generated</Form.Label>
                                                 <Form.Select>
                                                     <option>Select</option>
                                                     <option>Utilization 1</option>
