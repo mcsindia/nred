@@ -1206,6 +1206,10 @@ br {
   font-weight: 600 !important;
 }
 
+.form-label{
+  font-weight: 700 !important;
+}
+
 /* My profile page css */
 .profile-card img{
   width: 8rem;

@@ -43,7 +43,7 @@ export const Sidebar = ({ isOpen }) => {
               >
                 <div className="d-flex align-items-center">
                   <FaProjectDiagram className="me-2" />
-                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Project Registration</span>
+                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>Project</span>
                 </div>
                 <FaCaretDown
                   className={`ms-auto ${openMenu === "project" ? "rotate" : ""} ${isOpen ? "hide-caret" : ""
@@ -56,13 +56,13 @@ export const Sidebar = ({ isOpen }) => {
                   <li className="dms-nav-item">
                     <div className="d-flex align-items-center">
                       <FaCaretRight />
-                      <a href="/project-registration/add" className="dms-nav-link text-white">Apply For Project</a>
+                      <a href="/project-registration/add" className="dms-nav-link text-white">Project Registration</a>
                     </div>
                   </li>
                   <li className="dms-nav-item">
                     <div className="d-flex align-items-center">
                       <FaCaretRight />
-                      <a href="/project-registration" className="dms-nav-link text-white">View Project Registration</a>
+                      <a href="/project-registration" className="dms-nav-link text-white">Project View</a>
                     </div>
                   </li>
                 </ul>
@@ -93,7 +93,7 @@ export const Sidebar = ({ isOpen }) => {
               >
                 <div className="d-flex align-items-center">
                   <FaUsers className="me-2" />
-                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>User</span>
+                  <span className={isOpen ? "" : "d-none d-md-none d-sm-block"}>User Management</span>
                 </div>
                 <FaCaretDown
                   className={`ms-auto ${openMenu === "user" ? "rotate" : ""} ${isOpen ? "hide-caret" : ""
@@ -130,12 +130,12 @@ export const Sidebar = ({ isOpen }) => {
                 </ul>
               )}
             </li>
-            <li className="dms-nav-item">
+           {/*  <li className="dms-nav-item">
               <a href="/registration-view" className="dms-nav-link text-white d-flex align-items-center">
                 <FaTachometerAlt className="me-2" />
                 <span> Registration View</span>
               </a>
-            </li>
+            </li> */}
           </>
         )}
       </ul>
