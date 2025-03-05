@@ -37,6 +37,7 @@ import { SectionList } from './pages/dms/Admin/User/Section/SectionList';
 import { SectionAdd } from './pages/dms/Admin/User/Section/SectionAdd';
 import { SectionEdit } from './pages/dms/Admin/User/Section/SectionEdit';
 import { DeveloperProfile } from './pages/dms/Developers/DeveloperProfile/DeveloperProfile';
+import { RegistrationView } from './pages/dms/Admin/RegistrationView/RegistrationView';
 
 function App() {
   return (
@@ -81,6 +82,8 @@ function App() {
         <Route path='/user' element={<UserList />} />
         <Route path='/user/add' element={<UserAdd />} />
         <Route path='/user/edit' element={<UserEdit />} />
+        {/* Registration View */}
+        <Route path='/registration-view' element={<RegistrationView/>} />
       </Routes>
     </BrowserRouter>
   );
