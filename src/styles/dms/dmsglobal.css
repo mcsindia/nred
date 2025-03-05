@@ -1193,7 +1193,17 @@ br {
 }
 
 .project-registration-header h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.form-headings{
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.bold-tab {
+  font-weight: 600 !important;
 }
 
 /* My profile page css */

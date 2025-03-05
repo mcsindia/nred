@@ -53,7 +53,7 @@ export const ProjectRegistrationView = () => {
                             className="mb-3"
                         >
                             {/* Tab 1: Individual or Company Details */}
-                            <Tab eventKey="individualOrCompany" title="Individual / Company Details">
+                            <Tab eventKey="individualOrCompany" title="Individual / Company Details" tabClassName="bold-tab">
                                 <Form>
                                     <div className="mb-3 d-flex" style={{ gap: "20px" }}>
                                         <Form.Check
@@ -79,7 +79,7 @@ export const ProjectRegistrationView = () => {
                                     {/* Individual Details Form */}
                                     {formType === "individual" && (
                                         <div>
-                                            <h5 className="mb-3">Individual Details</h5>
+                                            <h5 className="form-headings">Individual Details</h5>
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="panNumber">
@@ -123,7 +123,7 @@ export const ProjectRegistrationView = () => {
                                                 </Col>
                                             </Row>
                                             <Form.Group controlId="experience">
-                                                <h5 className="mb-3">Experience Details</h5>
+                                                <h5 className=" form-headings">Experience Details</h5>
                                                 <Form.Label>
                                                     Whether the Applicant has prior Experience in Renewable Energy or
                                                     Energy Storage Projects*
@@ -157,7 +157,7 @@ export const ProjectRegistrationView = () => {
                                     {/* Company / Firm Details Form */}
                                     {formType === "company" && (
                                         <div>
-                                            <h5 className="mb-3">Company / Firm Details</h5>
+                                            <h5 className="form-headings">Company / Firm Details</h5>
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="gstin">
@@ -235,7 +235,7 @@ export const ProjectRegistrationView = () => {
                                                 </Col>
                                             </Row>
 
-                                            <h5 className="mb-3">Registered Address of Firm</h5>
+                                            <h5 className="form-headings">Registered Address of Firm</h5>
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="registeredAddress">
@@ -251,7 +251,7 @@ export const ProjectRegistrationView = () => {
                                                 </Col>
                                             </Row>
 
-                                            <h5 className="mb-3">Authorised Signatory / Nodal Office Details</h5>
+                                            <h5 className="form-headings">Authorised Signatory / Nodal Office Details</h5>
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="name">
@@ -267,7 +267,7 @@ export const ProjectRegistrationView = () => {
                                                 </Col>
                                             </Row>
 
-                                            <h5 className="mb-3">Corresponding Address</h5>
+                                            <h5 className="form-headings">Corresponding Address</h5>
                                             <Row className="mb-3">
                                                 <Col md={6}>
                                                     <Form.Group controlId="name">
@@ -294,7 +294,7 @@ export const ProjectRegistrationView = () => {
                                             </Row>
 
                                             <Form.Group controlId="experience">
-                                                <h5 className="mb-3">Experience Details</h5>
+                                                <h5 className="form-headings">Experience Details</h5>
                                                 <Form.Label>
                                                     Whether the Applicant has prior Experience in Renewable Energy or
                                                     Energy Storage Projects*
@@ -336,9 +336,9 @@ export const ProjectRegistrationView = () => {
                             </Tab>
 
                             {/* Tab 2: Project Details */}
-                            <Tab eventKey="projectDetails" title="Project Details">
+                            <Tab eventKey="projectDetails" title="Project Details" tabClassName="bold-tab">
                                 <Form>
-                                    <h5 className="mb-3">Project Details</h5>
+                                    <h5 className="form-headings">Project Details</h5>
 
                                     {/* Project Name and Company */}
                                     <Row className="mb-3">
@@ -454,7 +454,7 @@ export const ProjectRegistrationView = () => {
                                     </Row>
 
                                     {/* Location of the Project */}
-                                    <h5 className="mt-3">Location of the Project</h5>
+                                    <h5 className="form-headings">Location of the Project</h5>
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="projectLocation">
@@ -683,7 +683,7 @@ export const ProjectRegistrationView = () => {
                                     </Row>
 
                                     {/* Land Related Information */}
-                                    <h5 className="mt-3">Land Related Information</h5>
+                                    <h5 className="form-headings">Land Related Information</h5>
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="landArea">
@@ -806,7 +806,7 @@ export const ProjectRegistrationView = () => {
                             </Tab>
 
                             {/* Power Evacuation & Generation Form */}
-                            <Tab eventKey="powerEvacuation" title="Power Evacuation & Generation">
+                            <Tab eventKey="powerEvacuation" title="Power Evacuation & Generation" tabClassName="bold-tab">
                                 <Form>
                                     {/* Is Electricity Connection Required */}
                                     <Row className="mb-3">
@@ -822,7 +822,7 @@ export const ProjectRegistrationView = () => {
                                     </Row>
 
                                     {/* Voltage Level for Power Evacuation */}
-                                    <h5 className="mb-3">Power Evacuation & Generation Details</h5>
+                                    <h5 className="form-headings">Power Evacuation & Generation Details</h5>
                                     <Row className="mb-3">
                                         <Col md={6}>
                                             <Form.Group controlId="voltageLevel">
@@ -930,8 +930,8 @@ export const ProjectRegistrationView = () => {
                             </Tab>
 
                             {/* Upload Relevant Documents Tab */}
-                            <Tab eventKey="documents" title="Upload Relevant Documents">
-                                <h5 className="mb-3">Upload Relevant Documents</h5>
+                            <Tab eventKey="documents" title="Upload Relevant Documents" tabClassName="bold-tab">
+                                <h5 className="form-headings">Upload Relevant Documents</h5>
 
                                 <Table bordered hover>
                                     <thead>
