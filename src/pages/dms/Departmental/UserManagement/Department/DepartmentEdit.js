@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { AdminLayout } from '../../../../../layouts/dms/AdminLayout/AdminLayout';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button, Container, Form } from 'react-bootstrap';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import Quill CSS
 
 export const DepartmentEdit = () => {
   const location = useLocation();
@@ -25,11 +23,6 @@ export const DepartmentEdit = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle Quill Change
-  const handleQuillChange = (value) => {
-    setFormData({ ...formData, description: value });
-  };
-
   // Handle Save
   const handleSave = (e) => {
     e.preventDefault();
@@ -44,24 +37,6 @@ export const DepartmentEdit = () => {
 
     // Handle save logic (e.g., API call or update state)
     navigate('/department'); // Navigate back to department list
-  };
-
-  // ✅ Custom Quill Toolbar Configuration
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }], // Headings
-      [{ font: [] }], // Font Selection
-      [{ size: [] }], // Font Size
-      ["bold", "italic", "underline", "strike"], // Text Formatting
-      [{ list: "ordered" }, { list: "bullet" }], // Ordered & Unordered Lists
-      [{ script: "sub" }, { script: "super" }], // Subscript & Superscript
-      [{ indent: "-1" }, { indent: "+1" }], // Indentation
-      [{ align: [] }], // Text Alignment
-      [{ color: [] }, { background: [] }], // Text Color & Background Color
-      ["blockquote", "code-block"], // Blockquote & Code Block
-      ["link", "image", "video"], // Insert Link, Image, Video
-      ["clean"], // Remove Formatting
-    ],
   };
 
   return (
@@ -83,16 +58,17 @@ export const DepartmentEdit = () => {
               />
             </Form.Group>
 
-            {/* Description with React Quill */}
+            {/* Description with Textarea */}
             <Form.Group className="dms-form-group">
               <Form.Label>Description</Form.Label>
-              <div className="quill-container">
-              <ReactQuill
+              <Form.Control
+                as="textarea"
+                name="description"
                 value={formData.description}
-                onChange={handleQuillChange}
-                modules={modules}
+                onChange={handleChange}
+                rows={5}
+                placeholder="Enter department description"
               />
-              </div>
             </Form.Group>
 
             {/* Buttons */}
@@ -100,7 +76,7 @@ export const DepartmentEdit = () => {
               <Button type="submit" variant="primary">
                 Save Changes
               </Button>
-              <Button type="button" variant="secondary" onClick={() => navigate('/department')}>
+              <Button type="cancel" variant="secondary" onClick={() => navigate('/department')}>
                 Cancel
               </Button>
             </div>

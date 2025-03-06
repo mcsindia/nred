@@ -11,8 +11,7 @@ export const Sidebar = ({ isOpen }) => {
 
   useEffect(() => {
     const storedUserType = localStorage.getItem("userType");
-    console.log("Retrieved userType in Sidebar:", storedUserType); // Debugging log
-    setUserType(storedUserType);
+     setUserType(storedUserType);
   }, []);
 
   return (

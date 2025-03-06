@@ -3,11 +3,9 @@ import { Button, Container, Form, Alert } from 'react-bootstrap';
 import { FaSave, FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { AdminLayout } from '../../../../../layouts/dms/AdminLayout/AdminLayout';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import Quill CSS
 
 export const DepartmentAdd = () => {
-  const navigate = useNavigate(); // Hook to navigate back
+  const navigate = useNavigate(); 
 
   // State for form fields
   const [formData, setFormData] = useState({
@@ -17,9 +15,7 @@ export const DepartmentAdd = () => {
 
   const [error, setError] = useState('');
 
-  const departmentOptions = [
-    'HR', 'Finance', 'Engineering', 'Marketing', 'Sales', 'Operations'
-  ];
+  const departmentOptions = ['HR', 'Finance', 'Engineering', 'Marketing', 'Sales', 'Operations'];
 
   // Handle Input Change
   const handleChange = (e) => {
@@ -27,14 +23,6 @@ export const DepartmentAdd = () => {
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
-
-  // Handle Quill Change
-  const handleQuillChange = (value) => {
-    setFormData({
-      ...formData,
-      description: value,
     });
   };
 
@@ -48,29 +36,16 @@ export const DepartmentAdd = () => {
       return;
     }
 
+    if (!formData.description.trim()) {
+      setError('Description is required.');
+      return;
+    }
+
     console.log('New Department Added:', formData);
     alert(`Department "${formData.name}" added successfully!`);
 
     // Redirect to department list
     navigate('/department');
-  };
-
-  // ✅ Custom Quill Toolbar Configuration
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }], // Headings
-      [{ font: [] }], // Font Selection
-      [{ size: [] }], // Font Size
-      ["bold", "italic", "underline", "strike"], // Text Formatting
-      [{ list: "ordered" }, { list: "bullet" }], // Ordered & Unordered Lists
-      [{ script: "sub" }, { script: "super" }], // Subscript & Superscript
-      [{ indent: "-1" }, { indent: "+1" }], // Indentation
-      [{ align: [] }], // Text Alignment
-      [{ color: [] }, { background: [] }], // Text Color & Background Color
-      ["blockquote", "code-block"], // Blockquote & Code Block
-      ["link", "image", "video"], // Insert Link, Image, Video
-      ["clean"], // Remove Formatting
-    ],
   };
 
   return (
@@ -79,7 +54,11 @@ export const DepartmentAdd = () => {
         <h4>Add New Department</h4>
         <div className='dms-form-container'>
           {/* Error Message */}
-          {error && <Alert variant="danger" onClose={() => setError('')} dismissible>{error}</Alert>}
+          {error && (
+            <Alert variant="danger" onClose={() => setError('')} dismissible>
+              {error}
+            </Alert>
+          )}
 
           <Form onSubmit={handleSubmit}>
             {/* Department Name */}
@@ -88,21 +67,24 @@ export const DepartmentAdd = () => {
               <Form.Select name="name" value={formData.name} onChange={handleChange} required>
                 <option value="">Select a department</option>
                 {departmentOptions.map((dept, index) => (
-                  <option key={index} value={dept}>{dept}</option>
+                  <option key={index} value={dept}>
+                    {dept}
+                  </option>
                 ))}
               </Form.Select>
             </Form.Group>
 
-            {/* Description with React Quill */}
+            {/* Description with Textarea */}
             <Form.Group className="dms-form-group">
               <Form.Label>Description</Form.Label>
-              <div className="quill-container">
-              <ReactQuill 
-                value={formData.description} 
-                onChange={handleQuillChange} 
-                modules={modules} 
+              <Form.Control
+                as="textarea"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+                rows={5}
+                placeholder="Enter department description"
               />
-              </div>
             </Form.Group>
 
             {/* Buttons */}
