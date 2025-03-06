@@ -14,8 +14,8 @@ export const Home = () => {
   return (
     <div className="home-container">
       <div className="home-overlay"></div>
-      <Container className="d-flex flex-column justify-content-center align-items-center min-vh-100">
-        {/* Logo Section (Ensures visibility) */}
+      <Container className="d-flex flex-column align-items-center">
+       {/* Logo Section (Ensures visibility) */}
         <Image src={logo} alt="Logo" className="home-logo" />
 
         {/* Cards Section */}

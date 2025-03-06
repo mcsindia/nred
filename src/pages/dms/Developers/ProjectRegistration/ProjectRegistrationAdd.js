@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Tabs, Tab, Form, Button, Row, Col, Card, Table, Modal} from "react-bootstrap";
 import { FaEye, FaFilePdf } from "react-icons/fa";
 import { AdminLayout } from "../../../../layouts/dms/AdminLayout/AdminLayout";
+import { useNavigate } from "react-router-dom";
 
 export const ProjectRegistrationAdd = () => {
     const [activeTab, setActiveTab] = useState("individualOrCompany");
@@ -12,6 +13,7 @@ export const ProjectRegistrationAdd = () => {
     const [uploadedFiles, setUploadedFiles] = useState({});
     const [locations, setLocations] = useState([{ latitude: "", longitude: "" }]);
     const [showModal, setShowModal] = useState(false);
+    const navigate = useNavigate();
 
     const handleAddLocation = () => {
         setLocations([...locations, { latitude: "", longitude: "" }]);
@@ -1223,7 +1225,7 @@ export const ProjectRegistrationAdd = () => {
                                             <strong>Application Number: NRED101/2024</strong>
                                         </Modal.Body>
                                         <Modal.Footer>
-                                            <Button variant="primary" onClick={() => setShowModal(false)}>
+                                            <Button variant="primary" onClick={() => navigate('/developer-dashboard')}>
                                                 OK
                                             </Button>
                                         </Modal.Footer>
