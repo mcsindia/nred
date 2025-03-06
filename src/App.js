@@ -2,8 +2,6 @@
 import '../src/styles/dms/dmsglobal.css'
 import '../src/styles/web/webglobal.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-/* Header My Profile */
-import { Profile } from './pages/dms/Profile/Profile';
 /* Departmental Panel */
 /* Authentication*/
 import { AdminLogin } from './pages/dms/Departmental/Authentication/AdminLogin';
@@ -53,8 +51,6 @@ function App() {
       <Routes>
         {/* Dashboard */}
         <Route path='/' element={<Home />} />
-        {/* Header Profile Page */}
-        <Route path='/profile' element={<Profile />} />
         {/* Developers */}
         {/* Developers Authentication Pages */}
         <Route path='/developer-login' element={<EnterMobile />} />

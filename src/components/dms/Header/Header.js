@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Dropdown } from "react-bootstrap";
-import { FaBars, FaSearch, FaBell, FaEnvelope, FaUserCircle, FaSignOutAlt, FaEdit, FaUser, FaExclamationCircle, FaComment, FaUserPlus, FaEnvelopeOpenText } from "react-icons/fa";
+import { FaBars, FaSearch, FaBell, FaEnvelope, FaUserCircle, FaSignOutAlt, FaEdit, FaUser, FaUsers, FaExclamationCircle, FaComment, FaUserPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export const DMSHeader = ({ toggleSidebar }) => {
   const navigate = useNavigate();
-  const [notifications, setNotifications] = useState([
+  const [userType, setUserType] = useState(null);
+
+  useEffect(() => {
+    const storedUserType = localStorage.getItem("userType");
+    setUserType(storedUserType);
+  }, []);
+
+  const [notifications] = useState([
     { id: 1, icon: <FaExclamationCircle />, type: "Server Error", message: "Your project registration request number '123' has been rejected.", time: "3 minutes ago" },
     { id: 2, icon: <FaComment />, type: "Message", message: "Your project registration request number '456' has been approved.", time: "25 minutes ago" },
     { id: 3, icon: <FaUserPlus />, type: "User Registered", message: "Your LOA has been generated you can download now.", time: "1 hour ago" },
@@ -87,20 +94,41 @@ export const DMSHeader = ({ toggleSidebar }) => {
           )}
         </div>
 
-
         <button className="dms-btn btn-light mx-2">
           <FaEnvelope size={20} />
         </button>
 
+        {/* User Profile Dropdown */}
         <Dropdown align="end">
           <Dropdown.Toggle variant="light">
             <FaUserCircle size={30} />
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item href="/profile"><FaUser /> My Profile</Dropdown.Item>
-            <Dropdown.Item href="#edit-profile"><FaEdit /> Edit Profile</Dropdown.Item>
+            {/* Conditionally render profile link based on user type */}
+            {userType === "developer" && (
+              <>
+                <Dropdown.Item href="/developer-profile">
+                  <FaUser /> My Profile
+                </Dropdown.Item>
+                <Dropdown.Item href="#edit-profile">
+                  <FaEdit /> Edit Profile
+                </Dropdown.Item>
+              </>
+            )}
+            {userType === "admin" && (
+              <>
+                <Dropdown.Item href="#admin-profile">
+                  <FaUser /> Admin Profile
+                </Dropdown.Item>
+                <Dropdown.Item href="#manage-users">
+                  <FaUsers /> Manage Users
+                </Dropdown.Item>
+              </>
+            )}
             <Dropdown.Divider />
-            <Dropdown.Item href="#logout"><FaSignOutAlt /> Logout</Dropdown.Item>
+            <Dropdown.Item href="#logout">
+              <FaSignOutAlt /> Logout
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
